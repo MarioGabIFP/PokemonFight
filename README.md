@@ -1,7 +1,7 @@
 # PokemonMMO
 Trabajo individual de programación perteneciente al tercer trimestre del primer curso de Desarrollo de Aplicaciones Multiplataforma
 
-## Distribución obligatoria de los objetos
+## Estructura general del aplicativo
 La estructura general del juego se basa en modelo, vista y controlador
 
 El modelo se basa en una clase objeto padre de tipo "Pokemon" de la que extienden diferentes clases objeto que representarán a un pokemon en concreto, cada uno de esos objetos implementará los diferentes ataques, estos, se representarán cada uno como una interfaz y extendieran de una interfaz padre llamada "Attacks" que contendra los ataques genericos de todos los pokemon.
