@@ -1,6 +1,6 @@
 package controller;
 
-import view.Frame;
+import java.io.IOException;
 
 /**
  * @author Mario Gabriel Núñez Alcázar de Velasco
@@ -21,7 +21,10 @@ public class Launcher extends Thread {
 	
 	@Override
 	public void run() {
-		Frame window = new Frame();
-		window.frame.setVisible(true);
+		try {
+			new Listener();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 }
