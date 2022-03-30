@@ -2,6 +2,8 @@ package controller;
 
 import java.io.IOException;
 
+import view.Screen;
+
 /**
  * @author Mario Gabriel Núñez Alcázar de Velasco
  */
@@ -23,7 +25,9 @@ public class Launcher extends Thread {
 	public void run() {
 		try {
 			new Listener();
+			new Screen();
 		} catch (IOException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
