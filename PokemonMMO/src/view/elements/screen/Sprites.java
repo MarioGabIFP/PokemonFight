@@ -1,8 +1,8 @@
 package view.elements.screen;
 
+import java.awt.Image;
 import java.io.File;
 import java.io.IOException;
-
 import model.Player;
 import model.Pokeball;
 import model.Trainer;
@@ -13,5 +13,7 @@ public interface Sprites extends Assets {
 	Player player = new Player();
 	Pokeball pokeball = new Pokeball();
 	
-	public void loadSprite(File image, int x, int y) throws IOException;
+	void loadSprite(Image image, int x, int y);
+	
+	public Image[] decodeSprites(File xml) throws IOException;
 }

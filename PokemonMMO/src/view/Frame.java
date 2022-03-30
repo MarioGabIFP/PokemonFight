@@ -1,14 +1,16 @@
 package view;
 
+import java.io.IOException;
 import javax.swing.JFrame;
-import view.elements.Base;
 
-public class Frame implements Base{
+public class Frame extends Graphic {
+	private static final long serialVersionUID = 1L;
 
 	/**
 	 * Contructor de la ventana.
+	 * @throws IOException 
 	 */
-	public Frame() {
+	public Frame() throws IOException {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.setBounds(100, 100, 960, 640);
 		frame.setMaximizedBounds(frame.getBounds());

@@ -3,26 +3,34 @@ package controller;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.io.IOException;
-import view.Screen;
 
 /**
  * @author Mario Gabriel Núñez Alcázar de Velasco
  */
-public class Listener extends Actions {
+public class Listener extends Actions{
+	private static final long serialVersionUID = 1L;
+	
 	Listener() throws IOException { 
-		new Screen();
-		
 		frame.addKeyListener(new KeyListener() {
 			
 			@Override
 			public void keyTyped(KeyEvent e) {}
 			
 			@Override
-			public void keyReleased(KeyEvent e) {}
+			public void keyReleased(KeyEvent e) {
+				KeyPressedList.remove((Object) e.getKeyCode());
+				PlayerActions().run();
+			}
 			
 			@Override
 			public void keyPressed(KeyEvent e) {
-				getAction(e).run();
+				int codeKey = e.getKeyCode();
+				
+				if (!KeyPressedList.contains(codeKey)) {
+					KeyPressedList.add(codeKey);
+				}
+				
+				PlayerActions().run();
 			}
 		});
 	}

@@ -26,5 +26,5 @@ public interface Assets extends Base {
 	/**
 	 * <strong>Mapas del Juego</strong>.
 	 */
-	String Maps = "assets/map/";
+	String Maps = "assets/maps/";
 }
