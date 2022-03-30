@@ -7,7 +7,9 @@ import java.io.IOException;
 /**
  * @author Mario Gabriel Núñez Alcázar de Velasco
  */
-public class Listener extends Actions {
+public class Listener extends Actions{
+	private static final long serialVersionUID = 1L;
+	
 	Listener() throws IOException { 
 		frame.addKeyListener(new KeyListener() {
 			
@@ -15,11 +17,20 @@ public class Listener extends Actions {
 			public void keyTyped(KeyEvent e) {}
 			
 			@Override
-			public void keyReleased(KeyEvent e) {}
+			public void keyReleased(KeyEvent e) {
+				KeyPressedList.remove((Object) e.getKeyCode());
+				PlayerActions().run();
+			}
 			
 			@Override
 			public void keyPressed(KeyEvent e) {
-				getAction(e).run();
+				int codeKey = e.getKeyCode();
+				
+				if (!KeyPressedList.contains(codeKey)) {
+					KeyPressedList.add(codeKey);
+				}
+				
+				PlayerActions().run();
 			}
 		});
 	}

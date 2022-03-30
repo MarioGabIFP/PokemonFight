@@ -1,17 +1,19 @@
 package model;
 
+import java.awt.Canvas;
+import java.awt.Image;
 import java.io.File;
 import java.util.ArrayList;
-import javax.swing.JLabel;
 
 /**
  * @author Mario Gabriel Núñez Alcázar de Velasco
  */
-public class Player extends JLabel{
+public class Player extends Canvas{
 	private static final long serialVersionUID = 1L;
 	
 	ArrayList<Pokemon> pokeBuffer = new ArrayList<Pokemon>();
-	File player_bmp;
+	Image playerSprite;
+	File playerSprites;
 	
 	public ArrayList<Pokemon> getPokeBuffer() {
 		return pokeBuffer;
@@ -21,11 +23,19 @@ public class Player extends JLabel{
 		this.pokeBuffer.add(pokemon);
 	}
 	
-	public File getPlayer_bmp() {
-		return player_bmp;
+	public File getPlayerSprites() {
+		return playerSprites;
 	}
 	
-	public void setPlayer_bmp(File player_bmp) {
-		this.player_bmp = player_bmp;
+	public void setPlayerSprites(File playerSprites) {
+		this.playerSprites = playerSprites;
+	}
+	
+	public Image getPlayerSprite() {
+		return playerSprite;
+	}
+	
+	public void setPlayerSprite(Image playerSpriteFront) {
+		this.playerSprite = playerSpriteFront;
 	}
 }

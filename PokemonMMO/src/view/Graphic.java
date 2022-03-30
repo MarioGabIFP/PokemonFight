@@ -16,6 +16,8 @@ import view.elements.screen.Sprites;
 public class Graphic extends Canvas implements IMaps, Sprites, Runnable {
 	private static final long serialVersionUID = 1L;
 
+	BufferStrategy bs;
+	
 	@Override
 	public void run() {
 		//Controlamos el refresco de la pantalla
@@ -44,48 +46,43 @@ public class Graphic extends Canvas implements IMaps, Sprites, Runnable {
 	}
 	
 	public void Update() throws IOException {
-		loadMap(_1_bmp);
-		loadSprite(player.getPlayer_bmp(), player.getX(), player.getY());
+		Image map = ImageIO.read(_1_bmp).getScaledInstance(g_base.getWidth(), g_base.getHeight(), Image.SCALE_FAST);
+		bs = g_base.getBufferStrategy();
+		
+		if (bs == null) {
+			g_base.createBufferStrategy(3);
+			return;
+		}
+
+		loadMap(map);
+		loadSprite(player.getPlayerSprite(), player.getX(), player.getY());
+		
+		bs.show();
 	}
 	
 	@Override
-	public void loadSprite(File image, int x, int y) throws IOException {
-		Image sprite = ImageIO.read(image).getScaledInstance(player.getWidth(), player.getHeight(), Image.SCALE_FAST);
-		BufferStrategy bs = g_base.getBufferStrategy();
-		
-		if (bs == null) {
-			createBufferStrategy(3);
-			return;
-		}
-		
+	public void loadSprite(Image sprite, int x, int y) {
 		Graphics g = bs.getDrawGraphics();
 		g.drawImage(sprite, x, y, null);
 		
 		if (g != null) {
 	        g.dispose();
 	    }
-		
-		bs.show();
 	}
 
 	@Override
-	public void loadMap(File image) throws IOException {
-		Image map = ImageIO.read(image).getScaledInstance(g_base.getWidth(), g_base.getHeight(), Image.SCALE_FAST);
-		BufferStrategy bs = g_base.getBufferStrategy();
-		
-		if (bs == null) {
-			createBufferStrategy(3);
-			return;
-		}
-		
+	public void loadMap(Image map) {
 		Graphics g = bs.getDrawGraphics();
 		g.drawImage(map, 0, 0, null);
 		
 		if (g != null) {
 	        g.dispose();
 	    }
-		
-		bs.show();
+	}
+
+	@Override
+	public Image[] decodeSprites(File xml) throws IOException {
+		return null;
 	}
 }
 
