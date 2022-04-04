@@ -1,66 +1,62 @@
 package controller;
 
+import static java.awt.image.ImageObserver.ABORT;
 import java.util.ArrayList;
 import view.Graphic;
+import static view.elements.screen.Sprites.player;
 
 /**
- * @author Mario Gabriel Núñez Alcázar de Velasco
+ * @author Mario Gabriel NÃºÃ±ez AlcÃ¡zar de Velasco
  */
-public class Actions extends Graphic{
-	private static final long serialVersionUID = 1L;
+public class Actions extends Graphic {
 
-	ArrayList<Integer> KeyPressedList = new ArrayList<Integer>();
+    private static final long serialVersionUID = 1L;
 
-	public Runnable PlayerActions() {
-		Runnable move = new Runnable() {
-			@Override
-			public void run() {
-				if (!KeyPressedList.isEmpty()) {
-					int x = player.getX();
-					int y = player.getY();
-					int w = player.getWidth();
-					int h = player.getHeight();
-					
-					if (KeyPressedList.size() == 1) {
-						int codeKey = KeyPressedList.get(0);
-						
-						if (codeKey == 40 || codeKey == 83) {
-							player.setBounds(x, y + 5, w, h);
-						} else if (codeKey == 38 || codeKey == 87) { 
-							player.setBounds(x, y - 5, w, h);
-						} else if (codeKey == 37 || codeKey == 65) { 
-							player.setBounds(x - 5, y, w, h);
-						} else if (codeKey == 39 || codeKey == 68) { 
-							player.setBounds(x + 5, y, w, h);
-						}
-					} else if(KeyPressedList.size() > 1) {
-						//Movimiento oblicuo
-//						int codeKey_1 = KeyPressedList.get(0);
-//						int codeKey_2 = KeyPressedList.get(1);
-//						
-//						if ((codeKey_1 == 40 || codeKey_1 == 83) && (codeKey_2 == 37 || codeKey_2 == 65)) {
-//							player.setBounds(x - 5, y + 5, w, h);
-//						} else if ((codeKey_1 == 40 || codeKey_1 == 83) && (codeKey_2 == 39 || codeKey_2 == 68)) {
-//							player.setBounds(x + 5, y + 5, w, h);
-//						} else if ((codeKey_1 == 38 || codeKey_1 == 87) && (codeKey_2 == 37 || codeKey_2 == 65)) {
-//							player.setBounds(x - 5, y - 5, w, h);
-//						} else if ((codeKey_1 == 38 || codeKey_1 == 87) && (codeKey_2 == 39 || codeKey_2 == 68)) {
-//							player.setBounds(x + 5, y - 5, w, h);
-//						} else if ((codeKey_1 == 37 || codeKey_1 == 65) && (codeKey_2 == 40 || codeKey_2 == 83)) {
-//							player.setBounds(x - 5, y + 5, w, h);
-//						} else if ((codeKey_1 == 37 || codeKey_1 == 65) && (codeKey_2 == 38 || codeKey_2 == 87)) {
-//							player.setBounds(x - 5, y - 5, w, h);
-//						} else if ((codeKey_1 == 39 || codeKey_1 == 68) && (codeKey_2 == 40 || codeKey_2 == 83)) {
-//							player.setBounds(x + 5, y + 5, w, h);
-//						} else if ((codeKey_1 == 39 || codeKey_1 == 68) && (codeKey_2 == 38 || codeKey_2 == 87)) {
-//							player.setBounds(x + 5, y - 5, w, h);
-//						}
-					}
-				}
-			}
-		};
-		
-		return move;
-	}
+    ArrayList<Integer> KeyPressedList = new ArrayList<Integer>();
+
+    public Runnable PlayerActions() {
+        Runnable move = new Runnable() {
+            @Override
+            public void run() {
+                if (!KeyPressedList.isEmpty()) {
+                    int x = player.getX();
+                    int y = player.getY();
+                    int w = player.getWidth();
+                    int h = player.getHeight();
+
+                    if (KeyPressedList.size() == 1) {
+                        int codeKey = KeyPressedList.get(0);
+
+                        switch (codeKey) {
+                            case 40:
+                            case 83:
+                                player.setPlayerTile(player.getTileBuffer().get(1).getScaledInstance(player.getWidth(), player.getHeight(), ABORT));
+                                player.setBounds(x, y + 5, w, h);
+                                break;
+                            case 38:
+                            case 87:
+                                player.setPlayerTile(player.getTileBuffer().get(4).getScaledInstance(player.getWidth(), player.getHeight(), ABORT));
+                                player.setBounds(x, y - 5, w, h);
+                                break;
+                            case 37:
+                            case 65:
+                                player.setPlayerTile(player.getTileBuffer().get(10).getScaledInstance(player.getWidth(), player.getHeight(), ABORT));
+                                player.setBounds(x - 5, y, w, h);
+                                break;
+                            case 39:
+                            case 68:
+                                player.setPlayerTile(player.getTileBuffer().get(7).getScaledInstance(player.getWidth(), player.getHeight(), ABORT));
+                                player.setBounds(x + 5, y, w, h);
+                                break;
+                            default:
+                                break;
+                        }
+                    }
+                }
+            }
+        };
+
+        return move;
+    }
 
 }

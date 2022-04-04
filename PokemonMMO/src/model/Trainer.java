@@ -1,7 +1,7 @@
 package model;
 
 /**
- * @author Mario Gabriel Núñez Alcázar de Velasco
+ * @author Mario Gabriel NÃºÃ±ez AlcÃ¡zar de Velasco
  */
 public class Trainer {
 

@@ -6,11 +6,12 @@ import java.io.File;
 import view.elements.Assets;
 
 /**
- * @author Mario Núñez Alcázar de Velasco
+ * @author Mario Gabriel NÃºÃ±ez AlcÃ¡zar de Velasco
  */
 public interface IMaps extends Assets {
-	Canvas g_base = new Canvas();
-	File _1_bmp = new File(Maps + "PuebloPaleta/1.bmp");
-	
-	public void loadMap(Image image);
+
+    Canvas g_base = new Canvas();
+    File _1_bmp = new File(Maps + "PuebloPaleta/1.bmp");
+
+    public void loadMap(Image image);
 }

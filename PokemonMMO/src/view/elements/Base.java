@@ -4,16 +4,18 @@ import java.awt.Color;
 import javax.swing.JFrame;
 
 /**
- * @author Mario Gabriel Núñez Alcázar de Velasco
+ * @author Mario Gabriel NÃºÃ±ez AlcÃ¡zar de Velasco
  */
 public interface Base {
-	/**
-	 * <strong>Ventana principal del aplicativo</strong>.
-	 */
-	JFrame frame = new JFrame();
-	
-	/**
-	 * <strong>Imitación del mítico color gris del embellecedor de la pantalla de la Game Boy clásica</strong>.
-	 */
-	Color grayGameBoy = new Color(144, 141, 147);
+
+    /**
+     * <strong>Ventana principal del aplicativo</strong>.
+     */
+    JFrame frame = new JFrame();
+
+    /**
+     * <strong>ImitaciÃ³n del mÃ­tico color gris del embellecedor de la pantalla
+     * de la Game Boy clÃ¡sica</strong>.
+     */
+    Color grayGameBoy = new Color(144, 141, 147);
 }

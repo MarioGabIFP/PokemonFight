@@ -1,11 +1,10 @@
 /**
- * 
+ *
  */
 package model;
 
 /**
- * @author mario
- *
+ * @author Mario Gabriel Núñez Alcázar de Velasco
  */
 public class Pokeball {
 
