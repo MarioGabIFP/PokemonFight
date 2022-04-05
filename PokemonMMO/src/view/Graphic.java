@@ -1,10 +1,7 @@
 package view;
 
 import java.awt.Canvas;
-import java.awt.DisplayMode;
 import java.awt.Graphics;
-import java.awt.GraphicsDevice;
-import java.awt.GraphicsEnvironment;
 import java.awt.Image;
 import java.awt.image.BufferStrategy;
 import java.awt.image.BufferedImage;
@@ -25,53 +22,11 @@ import view.elements.screen.Sprites;
 /**
  * @author Mario Gabriel Núñez Alcázar de Velasco
  */
-public class Graphic extends Canvas implements IMaps, Sprites, Runnable {
+public class Graphic extends Canvas implements IMaps, Sprites{
 
     private static final long serialVersionUID = 1L;
 
-    BufferStrategy bs;
-
-    @Override
-    public void run() {
-        //Controlamos el refresco de la pantalla
-        GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
-        GraphicsDevice gs = ge.getDefaultScreenDevice();
-        DisplayMode dm = gs.getDisplayMode();
-        long OT = 1000000000 / dm.getRefreshRate();
-
-        try {
-            while (true) {
-                long prevTU = System.nanoTime();
-
-                Update();
-
-                long sleep = (OT - (System.nanoTime() - prevTU)) / 1000000000;
-
-                try {
-                    Thread.sleep(sleep);
-                } catch (InterruptedException ex) {
-                    break;
-                }
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-    public void Update() throws IOException {
-        Image map = ImageIO.read(_1_bmp).getScaledInstance(g_base.getWidth(), g_base.getHeight(), Image.SCALE_FAST);
-        bs = g_base.getBufferStrategy();
-
-        if (bs == null) {
-            g_base.createBufferStrategy(3);
-            return;
-        }
-
-        loadMap(map);
-        loadSprite(player.getPlayerTile(), player.getX(), player.getY());
-
-        bs.show();
-    }
+    public BufferStrategy bs;
 
     @Override
     public void loadSprite(Image sprite, int x, int y) {
@@ -88,7 +43,7 @@ public class Graphic extends Canvas implements IMaps, Sprites, Runnable {
     }
 
     @Override
-    public ArrayList<Image> decodeSprites(File xml) throws IOException, SAXException, ParserConfigurationException {
+    public ArrayList<Image> decodeSprites(File xml, String dir) throws IOException, SAXException, ParserConfigurationException {
         int tsw = 0;
         ArrayList<Image> tilesList = new ArrayList<>();
 
@@ -118,10 +73,10 @@ public class Graphic extends Canvas implements IMaps, Sprites, Runnable {
                 }
             }
 
-            sprite = ImageIO.read(new File(spritePlayer + ((Element) document.getElementsByTagName("image").item(0)).getAttribute("source")));
+            sprite = ImageIO.read(new File(dir + ((Element) document.getElementsByTagName("image").item(0)).getAttribute("source")));
 
             if (tsw < Integer.parseInt(((Element) document.getElementsByTagName("image").item(0)).getAttribute("width"))) {
-                tilesList.add(sprite.getSubimage(tsw, 0, 14, 32));
+                tilesList.add(sprite.getSubimage(tsw, 0, 14, Integer.parseInt(((Element) document.getElementsByTagName("image").item(0)).getAttribute("height"))));
             }
         }
 

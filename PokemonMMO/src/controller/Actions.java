@@ -8,7 +8,7 @@ import static view.elements.screen.Sprites.player;
 /**
  * @author Mario Gabriel Núñez Alcázar de Velasco
  */
-public class Actions extends Graphic {
+public abstract class Actions extends Graphic {
 
     private static final long serialVersionUID = 1L;
 

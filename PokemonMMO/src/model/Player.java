@@ -15,7 +15,7 @@ public class Player extends Canvas {
     ArrayList<Pokemon> pokeBuffer = new ArrayList<>();
     ArrayList<Image> tiles = new ArrayList<>();
     Image actualTile;
-    File playerSprite;
+    File playerSprites;
 
     public ArrayList<Pokemon> getPokeBuffer() {
         return pokeBuffer;
@@ -26,11 +26,11 @@ public class Player extends Canvas {
     }
 
     public File getPlayerSprites() {
-        return playerSprite;
+        return playerSprites;
     }
 
     public void setPlayerSprites(File playerSprites) {
-        this.playerSprite = playerSprites;
+        this.playerSprites = playerSprites;
     }
 
     public Image getPlayerTile() {

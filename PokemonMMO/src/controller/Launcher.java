@@ -3,13 +3,14 @@ package controller;
 import java.io.IOException;
 import javax.xml.parsers.ParserConfigurationException;
 import org.xml.sax.SAXException;
-
-import view.Screen;
+import view.Frame;
+import view.frameable.Alabastia_4_3;
+import view.frameable.dctrOakTalks;
 
 /**
  * @author Mario Gabriel Núñez Alcázar de Velasco
  */
-public class Launcher extends Thread {
+public class Launcher {
 
     /**
      * Método lanzador.
@@ -18,18 +19,8 @@ public class Launcher extends Thread {
      *
      * @param args
      */
-    public static void main(String[] args) {
-        Launcher launch = new Launcher();
-        launch.start();
-    }
-
-    @Override
-    public void run() {
-        try {
-            new Listener();
-            new Screen();
-        } catch (IOException | SAXException | ParserConfigurationException e) {
-            e.printStackTrace();
-        }
+    public static void main(String[] args) throws IOException, SAXException, ParserConfigurationException {
+        new Frame();
+        new Orchestrator();
     }
 }

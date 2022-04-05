@@ -23,7 +23,7 @@ public interface Assets extends Base {
     /**
      * <strong>Sprites de Entrenadores</strong>.
      */
-    String spritesTrainer = "assets/sprites/trainers/";
+    String spritesTrainer = "assets/sprites/trainer/";
 
     /**
      * <strong>Mapas del Juego</strong>.
