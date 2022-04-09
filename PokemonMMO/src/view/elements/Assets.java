@@ -1,5 +1,12 @@
 package view.elements;
 
+import java.awt.Image;
+import java.io.File;
+import java.io.IOException;
+import java.util.ArrayList;
+import javax.xml.parsers.ParserConfigurationException;
+import org.xml.sax.SAXException;
+
 /**
  * @author Mario Gabriel Núñez Alcázar de Velasco
  */
@@ -26,7 +33,22 @@ public interface Assets extends Base {
     String spritesTrainer = "assets/sprites/trainer/";
 
     /**
-     * <strong>Mapas del Juego</strong>.
+     * <strong>Mapas del Pueblo Paleta</strong>.
      */
-    String Maps = "assets/maps/";
+    String _Alabastia_4_3 = "assets/maps/Alabastia/4_3/";
+    
+    /**
+     * <strong>Mapas del Pueblo Paleta</strong>.
+     */
+    File battleBackground = new File("assets/maps/battle/1.png");
+    
+    /**
+     * @param xml
+     * @param dir
+     * @return
+     * @throws IOException
+     * @throws SAXException
+     * @throws ParserConfigurationException
+     */
+    public abstract ArrayList<Image> tileMapper(File xml, String dir) throws IOException, SAXException, ParserConfigurationException;
 }

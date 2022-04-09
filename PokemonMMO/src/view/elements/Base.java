@@ -1,6 +1,6 @@
 package view.elements;
 
-import java.awt.Color;
+import java.util.ArrayList;
 import javax.swing.JFrame;
 
 /**
@@ -13,9 +13,5 @@ public interface Base {
      */
     JFrame frame = new JFrame();
 
-    /**
-     * <strong>Imitación del mítico color gris del embellecedor de la pantalla
-     * de la Game Boy clásica</strong>.
-     */
-    Color grayGameBoy = new Color(144, 141, 147);
+    ArrayList<Integer> KeyPressedList = new ArrayList<>();
 }

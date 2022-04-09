@@ -1,46 +1,76 @@
 package controller;
 
+import controller.Actions;
+import controller.Charger;
+import controller.controllable.PlayerActions;
+import controller.menu.MenuActions;
+import controller.menu.MenuCharger;
+import controller.battle.BattleCharger;
+import controller.battle.BattleActions;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
-import java.io.IOException;
-import javax.xml.parsers.ParserConfigurationException;
-import org.xml.sax.SAXException;
-import view.Frame;
-import view.frameable.Alabastia_4_3;
-import view.frameable.dctrOakTalks;
+import java.awt.event.WindowEvent;
+import java.awt.event.WindowFocusListener;
 
 /**
  * @author Mario Gabriel Núñez Alcázar de Velasco
  */
-public class Orchestrator extends Actions {
+public class Orchestrator extends PlayerActions implements KeyListener, WindowFocusListener{
+    public enum ObjectTC{
+        player,
+        menu, 
+        battle
+    }
+    
+    Actions actions = null;
+    Charger charger = null;
 
-    private static final long serialVersionUID = 1L;
-
-    Orchestrator() throws IOException, SAXException, ParserConfigurationException {
-        frame.addKeyListener(new KeyListener() {
-
-            @Override
-            public void keyTyped(KeyEvent e) {
+    public Orchestrator(ObjectTC otc) {
+        switch (otc) {
+            case player -> {
+                actions = new PlayerActions();
             }
-
-            @Override
-            public void keyReleased(KeyEvent e) {
-                KeyPressedList.remove((Object) e.getKeyCode());
-                PlayerActions().run();
+            case menu -> {
+                actions = new MenuActions();
+                charger = new MenuCharger();
             }
-
-            @Override
-            public void keyPressed(KeyEvent e) {
-                int codeKey = e.getKeyCode();
-
-                if (!KeyPressedList.contains(codeKey)) {
-                    KeyPressedList.add(codeKey);
-                }
-
-                PlayerActions().run();
+            case battle -> {
+                actions = new BattleActions();
+                charger = new BattleCharger();
             }
-        });
+        }
         
-        Frame.chargeMap(new dctrOakTalks());
+        if (charger != null) {
+            charger.run();
+        }
+    }
+    
+    @Override
+    public void keyTyped(KeyEvent e) {}
+
+    @Override
+    public void keyPressed(KeyEvent e) {
+        int codeKey = e.getKeyCode();
+
+        if (!KeyPressedList.contains(codeKey)) {
+            KeyPressedList.add(codeKey);
+        }
+        
+        actions.run();
+    }
+
+    @Override
+    public void keyReleased(KeyEvent e) {
+        KeyPressedList.remove((Object) e.getKeyCode());
+        
+        actions.run();
+    }
+
+    @Override
+    public void windowGainedFocus(WindowEvent e) {}
+
+    @Override
+    public void windowLostFocus(WindowEvent e) {
+        KeyPressedList.clear();
     }
 }

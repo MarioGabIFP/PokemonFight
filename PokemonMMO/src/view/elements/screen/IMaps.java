@@ -2,7 +2,7 @@ package view.elements.screen;
 
 import java.awt.Canvas;
 import java.awt.Image;
-import java.io.File;
+import model.Map;
 import view.elements.Assets;
 
 /**
@@ -10,8 +10,8 @@ import view.elements.Assets;
  */
 public interface IMaps extends Assets {
 
-    Canvas g_base = new Canvas();
-    File _1_bmp = new File(Maps + "PuebloPaleta/1.bmp");
+    Canvas g_0 = new Canvas();
+    Map _map = new Map();
 
-    public void loadMap(Image image);
+    public void loadMap(Image image, int x, int y);
 }

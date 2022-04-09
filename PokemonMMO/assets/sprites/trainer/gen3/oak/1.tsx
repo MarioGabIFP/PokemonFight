@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <tileset>
-    <image source="1.png" width="168" height="31"/>
+    <image source="1.png" width="168" height="31" tileW="14" tileH="31"/>
     <animation>
         <property duration="400" />
     </animation>

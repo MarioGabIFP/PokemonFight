@@ -14,6 +14,10 @@ public class Pokeball extends Canvas {
     type pokeballType;
     Image actualTile;
 
+    public Pokeball(type pokeballType) {
+        this.pokeballType = pokeballType;
+    }
+
     public Image getActualTile() {
         return actualTile;
     }
