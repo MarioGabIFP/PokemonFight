@@ -157,7 +157,7 @@ public class Graphic extends Canvas implements IMaps, Models, Form {
             sprite = ImageIO.read(new File(dir + ((Element) document.getElementsByTagName("image").item(0)).getAttribute("source")));
             tw = Integer.parseInt(((Element) document.getElementsByTagName("image").item(0)).getAttribute("tileW"));
             th = Integer.parseInt(((Element) document.getElementsByTagName("image").item(0)).getAttribute("tileH"));
-
+            
             if (tsw < Integer.parseInt(((Element) document.getElementsByTagName("image").item(0)).getAttribute("width"))) {
                 tilesList.add(sprite.getSubimage(tsw, tsh, tw, th));
             }

@@ -7,7 +7,6 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 import javax.xml.parsers.ParserConfigurationException;
 import model.Pokeball;
-import model.Trainer;
 import org.xml.sax.SAXException;
 import view.Frame;
 import view.frames.Updater;

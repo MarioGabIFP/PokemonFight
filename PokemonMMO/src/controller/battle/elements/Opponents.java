@@ -1,26 +1,23 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Enum.java to edit this template
- */
-package controller.elements;
+package controller.battle.elements;
 
+import java.io.File;
 import model.Pokemon.Gender;
 
 /**
- *
- * @author mario
+ * @author Mario Gabriel Núñez Alcázar de Velasco
  */
 public interface Opponents {
     public enum values {
-        player(null, null, 0, 0),
-        enemy(null, null, 0, 0);
+        player(null, null, 0, 0, ""),
+        enemy(null, null, 0, 0, "");
 
         String name;
         Gender gender;
+        String Tile;
         int hp;
         int lv;
 
-        values (String name, String gender, int hp, int lv){};
+        values (String name, String gender, int hp, int lv, String Sprite){};
 
         public String getName() {return name;}
         public void setName(String name) {this.name = name;}
@@ -30,5 +27,7 @@ public interface Opponents {
         public void setHP(int hp) {this.hp = hp;}
         public int getLV() {return lv;}
         public void setLV(int lv) {this.lv = lv;}
+        public void setTile(String Tile) {this.Tile = Tile;}
+        public String getTile() {return Tile;}
     }
 }

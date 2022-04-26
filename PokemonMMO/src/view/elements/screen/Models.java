@@ -2,6 +2,7 @@ package view.elements.screen;
 
 import java.awt.Image;
 import model.Player;
+import model.Pointer;
 import model.Pokeball;
 import model.Trainer;
 import view.elements.Assets;
@@ -13,6 +14,7 @@ public interface Models extends Assets {
     Player player = new Player();
     Trainer trainer = new Trainer();
     Pokeball pokeball = new Pokeball(Pokeball.type.multiball);
+    Pointer pointer = new Pointer();
 
     void loadSprite(Image image, int x, int y);
 }

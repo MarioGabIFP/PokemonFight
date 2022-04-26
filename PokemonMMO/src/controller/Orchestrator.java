@@ -1,21 +1,24 @@
 package controller;
 
-import controller.Actions;
-import controller.Charger;
-import controller.controllable.PlayerActions;
+import controller.player.PlayerActions;
 import controller.menu.MenuActions;
-import controller.menu.MenuCharger;
 import controller.battle.BattleCharger;
 import controller.battle.BattleActions;
+import controller.menu.MenuCharger;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowFocusListener;
+import java.io.IOException;
+import javax.xml.parsers.ParserConfigurationException;
+import org.xml.sax.SAXException;
+import view.elements.Base;
 
 /**
  * @author Mario Gabriel Núñez Alcázar de Velasco
  */
-public class Orchestrator extends PlayerActions implements KeyListener, WindowFocusListener{
+public class Orchestrator implements KeyListener, WindowFocusListener, Base{
+
     public enum ObjectTC{
         player,
         menu, 
@@ -25,7 +28,7 @@ public class Orchestrator extends PlayerActions implements KeyListener, WindowFo
     Actions actions = null;
     Charger charger = null;
 
-    public Orchestrator(ObjectTC otc) {
+    public Orchestrator(ObjectTC otc) throws IOException, SAXException, ParserConfigurationException, InterruptedException {
         switch (otc) {
             case player -> {
                 actions = new PlayerActions();

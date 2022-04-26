@@ -1,4 +1,4 @@
-package controller.controllable;
+package controller.player;
 
 import controller.Actions;
 

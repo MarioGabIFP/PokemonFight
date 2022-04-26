@@ -1,24 +1,27 @@
 package controller.battle;
 
+import controller.battle.elements.Opponents;
 import controller.Charger;
-import controller.elements.Opponents;
+import controller.elements.Options;
 import model.Pokemon;
 
 /**
  * @author Mario Gabriel Núñez Alcázar de Velasco
  */
-public class BattleCharger extends Charger implements Opponents{
+public class BattleCharger extends Charger implements Opponents, Options{
     
     @Override
     public void run() {
-        values.enemy.setHP(100);
-        values.enemy.setName("El Tio la Vara");
-        values.enemy.setGender(Pokemon.Gender.male);
-        values.enemy.setLV(23);
+        values.enemy.setTile(spritesPokemon + "gen3/25/25.png");
+        values.enemy.setHP(30);
+        values.enemy.setName("pepe");
+        values.enemy.setGender(Pokemon.Gender.female);
+        values.enemy.setLV(4);
         
+        values.player.setTile(spritesPokemon + "gen3/4/4_b.png");
         values.player.setHP(100);
-        values.player.setName("Manolo");
-        values.player.setGender(Pokemon.Gender.female);
-        values.player.setLV(2);
+        values.player.setName("Charmander");
+        values.player.setGender(Pokemon.Gender.male);
+        values.player.setLV(50);
     }
 }

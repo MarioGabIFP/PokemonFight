@@ -11,7 +11,7 @@ package controller.helper;
 public class Tools {
     public static void calculateMapT() {
         int x = 0;
-        for (int i = 0; i < 4; i++) {
+        for (int i = 0; i < 3; i++) {
             int y = 0;
             for (int r = 0; r < 2; r++) {
                 System.out.println("<tile>");
@@ -22,9 +22,9 @@ public class Tools {
                 System.out.println("        <property name=\"startH\" type=\"int\" value=\"" + y + "\"/>");
                 System.out.println("    </properties>");
                 System.out.println("</tile>");
-                y += 16;
+                y += 120;
             }
-            x += 16;
+            x += 120;
         }
     }
 }

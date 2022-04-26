@@ -26,6 +26,11 @@ public interface Assets extends Base {
      * <strong>Sprites Pokeball</strong>.
      */
     String spritesPokeball = "assets/sprites/pokeballs/";
+    
+    /**
+     * <strong>Sprites Pokeball</strong>.
+     */
+    String spritePointer = "assets/sprites/pointers/";
 
     /**
      * <strong>Sprites de Entrenadores</strong>.
@@ -41,6 +46,16 @@ public interface Assets extends Base {
      * <strong>Mapas del Pueblo Paleta</strong>.
      */
     File battleBackground = new File("assets/maps/battle/1.png");
+    
+    /**
+     * <strong>Simbolos del Sexo de Pokemones</strong>.
+     */
+    String genderImg = "assets/sprites/pokemon/gender/";
+    
+    /**
+     * <strong>Sprites de los Pokemones</strong>.
+     */
+    String spritesPokemon = "assets/sprites/pokemon/";
     
     /**
      * @param xml
