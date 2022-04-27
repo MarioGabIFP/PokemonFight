@@ -101,6 +101,14 @@ public class Graphic extends Canvas implements IMaps, Models, Form {
     }
     
     @Override
+    public void loadFillOval(int x, int y, int w, int h, Color color) {
+        g = bs.getDrawGraphics();
+        ((Graphics2D) g).setColor(color);
+        ((Graphics2D) g).fillOval(x, y, w, h);
+        ((Graphics2D) g).dispose();
+    }
+    
+    @Override
     public void loadFillRect(int x, int y, int w, int h, Color color, BasicStroke thickness) {
         g = bs.getDrawGraphics();
         ((Graphics2D) g).setStroke(thickness);

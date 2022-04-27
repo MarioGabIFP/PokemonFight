@@ -25,8 +25,8 @@ public class Orchestrator implements KeyListener, WindowFocusListener, Base{
         battle
     }
     
-    Actions actions = null;
-    Charger charger = null;
+    public Actions actions = null;
+    public Charger charger = null;
 
     public Orchestrator(ObjectTC otc) throws IOException, SAXException, ParserConfigurationException, InterruptedException {
         switch (otc) {

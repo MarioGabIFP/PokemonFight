@@ -20,6 +20,7 @@ public interface Form extends Assets {
     public void loadRoundRect(int x, int y, int w, int h, Color color, BasicStroke thickness, int aW, int aH);
     public void loadRect(int x, int y, int w, int h, Color color, BasicStroke thickness);
     public void loadFillRect(int x, int y, int w, int h, Color color, BasicStroke thickness);
+    public void loadFillOval(int x, int y, int w, int h, Color color);
     public void loadString(int x, int y, Color color, String text, int w);
     public void loadImage(Image img, int x, int y);
 }
