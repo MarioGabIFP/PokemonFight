@@ -4,6 +4,7 @@ import java.awt.Canvas;
 import java.awt.Image;
 import java.io.File;
 import java.util.ArrayList;
+import model.Pokemon;
 
 /**
  * @author Mario Gabriel Núñez Alcázar de Velasco

@@ -125,7 +125,7 @@ public class PokeDex extends Frame implements Updater {
         h1 = 60;
         h2 = 83;
         for (int i = 0; i < 7; i++) {
-            loadFillOval(258, h1, 30, 30, ma.actions.selectItem ? Color.BLUE : WHITE);
+            loadFillOval(258, h1, 30, 30, WHITE); // ma.actions.selectItem ? Color.BLUE : WHITE
             loadString(315, h2, BLACK, "Null", 25);
             h1 += 50;
             h2 += 50;
