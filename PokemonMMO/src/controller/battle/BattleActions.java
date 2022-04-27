@@ -25,7 +25,6 @@ public class BattleActions extends Actions implements Opponents, Options {
                                     case setfigth -> {
                                         System.out.println("Lucha");
                                         values.enemy.setHP(i);
-
                                         values.player.setHP(i);
 
                                         if (i > 0 || i < 100) {

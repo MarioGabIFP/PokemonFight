@@ -23,13 +23,13 @@ public class Launcher {
      * @param args
      */
     public static void main(String[] args) throws IOException, SAXException, ParserConfigurationException, InterruptedException {
-//        new Thread(() -> {
-//            try {
-//                new BattleView();
-//            } catch (IOException | SAXException | ParserConfigurationException | InterruptedException ex) {
-//                Logger.getLogger(Launcher.class.getName()).log(Level.SEVERE, null, ex);
-//            }
-//        }){{start();}}.setName("BattleView");
+        new Thread(() -> {
+            try {
+                new BattleView();
+            } catch (IOException | SAXException | ParserConfigurationException | InterruptedException ex) {
+                Logger.getLogger(Launcher.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }){{start();}}.setName("BattleView");
         
 //        new Thread(() -> {
 //            try {
@@ -39,13 +39,13 @@ public class Launcher {
 //            }
 //        }){{start();}}.setName("PokeDexView");
         
-        new Thread(() -> {
-            try {
-                new Alabastia_4_3();
-            } catch (IOException | SAXException | ParserConfigurationException | InterruptedException ex) {
-                Logger.getLogger(Launcher.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        }){{start();}}.setName("Alabastia_4_3");
+//        new Thread(() -> {
+//            try {
+//                new Alabastia_4_3();
+//            } catch (IOException | SAXException | ParserConfigurationException | InterruptedException ex) {
+//                Logger.getLogger(Launcher.class.getName()).log(Level.SEVERE, null, ex);
+//            }
+//        }){{start();}}.setName("Alabastia_4_3");
 
 //        Tools.calculateMapT();
     }

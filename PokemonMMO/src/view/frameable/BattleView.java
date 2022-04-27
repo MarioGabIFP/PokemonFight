@@ -104,18 +104,18 @@ public class BattleView extends Frame implements Updater {
         /**
          * Pinta informacion enemigo
          */
-        loadFillRoundRect(220, 10, 287, 70, new Color(0.984f, 0.965f, 0.839f), new BasicStroke(6.0f), 10, 10);
-        loadRoundRect(220, 10, 287, 70, BLACK, new BasicStroke(6.0f), 10, 10);
-        loadFillRoundRect(227, 47, 242, 19, new Color(0.322f, 0.412f, 0.341f), new BasicStroke(6.0f), 10, 10);
-        loadLine(260, 56, 460, 56, WHITE, new BasicStroke(10.0f));
-        hpPrint(260, 460, 56, 56, BattleActions.values.enemy);
-        loadString(255, 36, BLACK, nameE, 25);
+        loadFillRoundRect(10, 10, 287, 70, new Color(0.984f, 0.965f, 0.839f), new BasicStroke(6.0f), 10, 10);
+        loadRoundRect(10, 10, 287, 70, BLACK, new BasicStroke(6.0f), 10, 10);
+        loadFillRoundRect(49, 47, 242, 19, new Color(0.322f, 0.412f, 0.341f), new BasicStroke(6.0f), 10, 10);
+        loadLine(80, 56, 280, 56, WHITE, new BasicStroke(10.0f));
+        hpPrint(80, 280, 56, 56, BattleActions.values.enemy);
+        loadString(55, 36, BLACK, nameE, 25);
         loadImage(genderImages.get( switch (BattleActions.values.enemy.getGender()) {
                                         case male -> 1;
                                         case female -> 0;
-                                    }).getScaledInstance(32, 32, ALLBITS), 225, 13);
-        loadString(233, 61, new Color(0.941f, 0.702f, 0.286f), "HP", 15);
-        loadString(420, 36, BLACK, "LV " + BattleActions.values.enemy.getLV(), 25);
+                                    }).getScaledInstance(32, 32, ALLBITS), 19, 13);
+        loadString(54, 61, new Color(0.941f, 0.702f, 0.286f), "HP", 15);
+        loadString(200, 36, BLACK, "LV " + BattleActions.values.enemy.getLV(), 25);
         
         /**
          * Recuadro inferior
