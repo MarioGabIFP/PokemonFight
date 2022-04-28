@@ -16,6 +16,5 @@ public interface Base {
      * <strong>Ventana principal del aplicativo</strong>.
      */
     public JFrame frame = new JFrame();
-    
     public ArrayList<Integer> KeyPressedList = new ArrayList<>();
 }

@@ -13,7 +13,7 @@ public class MenuCharger extends Charger implements Options{
     public MenuCharger() throws IOException, SAXException, ParserConfigurationException, InterruptedException {}
     
     @Override
-    public void run() {
+    public void charge() {
         System.out.println("controller.MenuCharger.run()");
     }
 }

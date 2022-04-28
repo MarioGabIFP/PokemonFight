@@ -1,14 +1,20 @@
 package controller.player;
 
 import controller.Actions;
+import java.io.IOException;
+import javax.xml.parsers.ParserConfigurationException;
+import org.xml.sax.SAXException;
 
 /**
  * @author Mario Gabriel Núñez Alcázar de Velasco
  */
 public class PlayerActions extends Actions {
 
+    public PlayerActions() throws IOException, SAXException, ParserConfigurationException, InterruptedException {
+    }
+
     @Override
-    public void run() {
+    public void KeyisPressed() {
         if (!KeyPressedList.isEmpty()) {
             int speed = 5;
 
@@ -58,8 +64,19 @@ public class PlayerActions extends Actions {
                             _map.setBounds(_map.getX() - speed, _map.getY(), _map.getWidth(), _map.getHeight());
                         }
                     }
+                    case 32 -> {
+                        System.out.println(exit);
+//                        stopRendering();
+//                        frame.remove(g_0);
+//                        try {
+//                            new Menu(Options.MenInfo.getPokemonFromMultiball);
+//                        } catch (IOException | SAXException | ParserConfigurationException | InterruptedException ex) {
+//                        }
+                    }
+
                     default -> {
-                        System.out.println(codeKey);
+                        stopRendering();
+                        System.out.println(codeKey); 
                     }
                 }
             }

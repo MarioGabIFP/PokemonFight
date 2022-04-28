@@ -9,9 +9,17 @@ import org.xml.sax.SAXException;
 /**
  * @author Mario Gabriel Núñez Alcázar de Velasco
  */
-public class Frame extends Graphic implements Runnable, Updater {
+public class Frame extends Graphic implements Updater {
     static Frame map = null;
-    public Thread t = new Thread(this);
+    public boolean exit;
+    
+    public void setExit(boolean exit) {
+        this.exit = exit;
+    }
+
+    public boolean isExit() {
+        return exit;
+    }
 
     /**
      * Contructor de la ventana.
@@ -19,29 +27,23 @@ public class Frame extends Graphic implements Runnable, Updater {
      * @throws IOException
      */
     public Frame() throws IOException, SAXException, ParserConfigurationException, InterruptedException {
-        if (frame.isVisible()) {
-            t.setName("Screen");
-            t.start();
-        } else {
-            frame.setUndecorated(true);
-            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-            frame.setBounds(100, 100, 960, 640);
-            frame.setMaximizedBounds(frame.getBounds());
-            frame.setResizable(false);
-        }
+        frame.setUndecorated(true);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setBounds(100, 100, 960, 640);
+        frame.setMaximizedBounds(frame.getBounds());
+        frame.setResizable(false);
     }
 
     public static void chargeMap(Frame maps) throws IOException, SAXException, ParserConfigurationException {
         map = maps;
     }
 
-    @Override
-    public void run() {
+    public void startRender() {
         if (isVisible()) {
             try {
-                while (isVisible()) {
-                    Update();
-                }
+                do {
+                    Update(isExit());
+                } while(!isExit());
             } catch (IOException | InterruptedException e) {
                 e.printStackTrace();
             }
@@ -49,5 +51,5 @@ public class Frame extends Graphic implements Runnable, Updater {
     }
 
     @Override
-    public void Update() throws IOException, InterruptedException {}
+    public void Update(Boolean isUp) throws IOException, InterruptedException {}
 }

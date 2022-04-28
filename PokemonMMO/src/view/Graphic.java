@@ -29,7 +29,6 @@ import view.elements.screen.Models;
  * @author Mario Gabriel Núñez Alcázar de Velasco
  */
 public class Graphic extends Canvas implements IMaps, Models, Form {
-
     public BufferStrategy bs;
     public Graphics g;
 

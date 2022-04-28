@@ -11,7 +11,7 @@ import model.pokemones.Pokemon;
 public class BattleCharger extends Charger implements Opponents, Options{
     
     @Override
-    public void run() {
+    public void charge() {
         values.enemy.setTile(spritesPokemon + "gen3/25/25.png");
         values.enemy.setHP(30);
         values.enemy.setName("pepe");

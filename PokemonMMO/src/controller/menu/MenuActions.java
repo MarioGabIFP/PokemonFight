@@ -1,14 +1,20 @@
 package controller.menu;
 
 import controller.Actions;
+import java.io.IOException;
+import javax.xml.parsers.ParserConfigurationException;
+import org.xml.sax.SAXException;
 
 /**
  * @author Mario Gabriel Núñez Alcázar de Velasco
  */
 public class MenuActions extends Actions {
 
+    public MenuActions() throws IOException, SAXException, ParserConfigurationException, InterruptedException {
+    }
+
     @Override
-    public void run() {
+    public void KeyisPressed() {
         if (!KeyPressedList.isEmpty()) {
             if (KeyPressedList.size() == 1) {
                 int codeKey = KeyPressedList.get(0);

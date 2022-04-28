@@ -44,7 +44,7 @@ public class Orchestrator implements KeyListener, WindowFocusListener, Base{
         }
         
         if (charger != null) {
-            charger.run();
+            charger.charge();
         }
     }
     
@@ -59,14 +59,14 @@ public class Orchestrator implements KeyListener, WindowFocusListener, Base{
             KeyPressedList.add(codeKey);
         }
         
-        actions.run();
+        actions.KeyisPressed();
     }
 
     @Override
     public void keyReleased(KeyEvent e) {
         KeyPressedList.remove((Object) e.getKeyCode());
         
-        actions.run();
+        actions.KeyisPressed();
     }
 
     @Override

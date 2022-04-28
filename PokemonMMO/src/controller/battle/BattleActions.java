@@ -3,6 +3,9 @@ package controller.battle;
 import controller.battle.elements.Opponents;
 import controller.Actions;
 import controller.elements.Options;
+import java.io.IOException;
+import javax.xml.parsers.ParserConfigurationException;
+import org.xml.sax.SAXException;
 import static view.elements.Base.KeyPressedList;
 
 /**
@@ -12,8 +15,11 @@ public class BattleActions extends Actions implements Opponents, Options {
 
     int i = 100;
 
+    public BattleActions() throws IOException, SAXException, ParserConfigurationException, InterruptedException {
+    }
+
     @Override
-    public void run() {
+    public void KeyisPressed() {
         if (!KeyPressedList.isEmpty()) {
             if (KeyPressedList.size() == 1) {
                 int codeKey = KeyPressedList.get(0);
