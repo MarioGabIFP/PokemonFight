@@ -3,7 +3,7 @@ package controller.battle;
 import controller.battle.elements.Opponents;
 import controller.Charger;
 import controller.elements.Options;
-import model.Pokemon;
+import model.pokemones.Pokemon;
 
 /**
  * @author Mario Gabriel Núñez Alcázar de Velasco

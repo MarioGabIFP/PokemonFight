@@ -1,5 +1,6 @@
 package model;
 
+import model.pokemones.Pokemon;
 import java.awt.Canvas;
 import java.awt.Image;
 import java.io.File;

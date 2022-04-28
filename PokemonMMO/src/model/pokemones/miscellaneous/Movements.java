@@ -1,8 +1,8 @@
-package model.pokemones;
+package model.pokemones.miscellaneous;
 
 /**
  * @author Mario Gabriel Núñez Alcázar de Velasco
  */
-public class Pikachu extends Pokemon {
+public interface Movements {
     
 }

@@ -1,7 +1,7 @@
 package controller.battle.elements;
 
 import java.io.File;
-import model.Pokemon.Gender;
+import model.pokemones.Pokemon.Gender;
 
 /**
  * @author Mario Gabriel Núñez Alcázar de Velasco
