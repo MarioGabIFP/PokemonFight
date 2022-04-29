@@ -1,11 +1,11 @@
-package view.elements.screen;
+package gui.elements.screen;
 
 import java.awt.Image;
 import model.Player;
 import model.menu.Pointer;
 import model.Pokeball;
 import model.Trainer;
-import view.elements.Assets;
+import gui.elements.Assets;
 
 /**
  * @author Mario Gabriel Núñez Alcázar de Velasco

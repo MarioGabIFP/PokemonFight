@@ -1,4 +1,4 @@
-package view.elements;
+package gui.elements;
 
 import java.awt.Image;
 import java.io.File;

@@ -22,17 +22,18 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
-import view.elements.screen.Form;
-import view.elements.screen.IMaps;
-import view.elements.screen.Models;
+import gui.elements.screen.Form;
+import gui.elements.screen.IMaps;
+import gui.elements.screen.Models;
 
 /**
  * @author Mario Gabriel Núñez Alcázar de Velasco
  */
-public class Graphic extends JFrame implements IMaps, Models, Form{
-    Canvas g_0 = new Canvas();
+public abstract class Graphic extends JFrame implements IMaps, Models, Form{
+    public Canvas g_0 = new Canvas();
     public BufferStrategy bs;
     public Graphics g;
+    public boolean update = true;
     
     public Graphic() {
         setUndecorated(true);
@@ -42,26 +43,16 @@ public class Graphic extends JFrame implements IMaps, Models, Form{
         setResizable(false);
     }
     
-    public void render() {
-        g_0.setBounds(223, 64, 514, 512);
-        add(g_0);
-        pack();
-        setVisible(true);
-    }
+    public abstract void create() throws IOException, SAXException, ParserConfigurationException, InterruptedException;
     
-    public void update() {
-        while (true) {
-            bs = g_0.getBufferStrategy();
+    public abstract void update() throws IOException, InterruptedException;
+    
+    public void setUpdate(boolean update) {
+        this.update = update;
+    }
 
-            if (bs == null) {
-                g_0.createBufferStrategy(3);
-            } else {
-                g = bs.getDrawGraphics();
-                ((Graphics2D) g).setColor(Color.BLACK);
-                ((Graphics2D) g).fillRoundRect(10, 10, 10, 10, 10, 10);
-                bs.show();
-            }
-        }
+    public boolean isUpdate() {
+        return update;
     }
     
     @Override
