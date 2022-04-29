@@ -1,6 +1,5 @@
 package controller;
 
-import gui.Graphic;
 import gui.elements.Base;
 import gui.frameable.Alabastia_4_3;
 import java.io.IOException;
@@ -20,6 +19,6 @@ public class Launcher implements Base {
      * @param args
      */
     public static void main(String[] args) throws IOException, SAXException, ParserConfigurationException, InterruptedException {
-        new Alabastia_4_3();
+        ScreenController.setScreen(new Alabastia_4_3());
     }
 }

@@ -1,6 +1,7 @@
 package controller.player;
 
 import controller.Actions;
+import controller.ScreenController;
 import gui.frameable.Alabastia_4_3;
 import gui.frameable.Menu;
 import java.io.IOException;
@@ -14,8 +15,7 @@ import org.xml.sax.SAXException;
  */
 public class PlayerActions extends Actions {
 
-    public PlayerActions() throws IOException, SAXException, ParserConfigurationException, InterruptedException {
-    }
+    public PlayerActions() throws IOException, SAXException, ParserConfigurationException, InterruptedException {}
 
     @Override
     public void KeyisPressed() {
@@ -70,7 +70,7 @@ public class PlayerActions extends Actions {
                     }
                     case 32 -> {
                         try {
-                            new Menu();
+                            ScreenController.setScreen(new Menu());
                         } catch (IOException | SAXException | ParserConfigurationException | InterruptedException ex) {
                             Logger.getLogger(PlayerActions.class.getName()).log(Level.SEVERE, null, ex);
                         }
