@@ -25,10 +25,11 @@ public class Orchestrator implements KeyListener, WindowFocusListener, Base{
         battle
     }
     
+    private ObjectTC otc;
     public Actions actions = null;
     public Charger charger = null;
 
-    public Orchestrator(ObjectTC otc) throws IOException, SAXException, ParserConfigurationException, InterruptedException {
+    public void chargeController()throws IOException, SAXException, ParserConfigurationException, InterruptedException {
         switch (otc) {
             case player -> {
                 actions = new PlayerActions();
@@ -48,11 +49,14 @@ public class Orchestrator implements KeyListener, WindowFocusListener, Base{
         }
     }
     
+    public void setOtc(ObjectTC otc) {this.otc = otc;}
+    
     @Override
     public void keyTyped(KeyEvent e) {}
 
     @Override
     public void keyPressed(KeyEvent e) {
+        System.out.println("controller.Orchestrator.keyPressed()");
         int codeKey = e.getKeyCode();
 
         if (!KeyPressedList.contains(codeKey)) {
@@ -74,6 +78,7 @@ public class Orchestrator implements KeyListener, WindowFocusListener, Base{
 
     @Override
     public void windowLostFocus(WindowEvent e) {
+        System.out.println("controller.Orchestrator.windowLostFocus()");
         KeyPressedList.clear();
     }
 }

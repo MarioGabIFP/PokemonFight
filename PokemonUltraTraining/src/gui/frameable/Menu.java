@@ -24,12 +24,10 @@ import static gui.elements.screen.Models.pointer;
  */
 public class Menu extends Graphic {
     String title;
-    Orchestrator ma;
     
     @Override
     public void create() throws IOException, SAXException, ParserConfigurationException, InterruptedException {
         this.title = MenInfo.getPokemonFromMultiball.getTitle();
-        ma = new Orchestrator(Orchestrator.ObjectTC.menu);
         
         // Establecemos el espacio de juego.
         g_0.setBounds(223, 64, 514, 512);
@@ -44,8 +42,6 @@ public class Menu extends Graphic {
         add(g_0);
         pack();
         setVisible(true);
-        addKeyListener((KeyListener) ma);
-        addWindowFocusListener((WindowFocusListener) ma);
     }
 
     @Override
@@ -118,11 +114,10 @@ public class Menu extends Graphic {
             h1 = 60;
             h2 = 83;
             for (int i = 0; i < 7; i++) {
-                loadFillOval(258, h1, 30, 30, WHITE); // ma.actions.selectItem ? Color.BLUE : WHITE
+                loadFillOval(258, h1, 30, 30, WHITE); 
                 loadString(315, h2, BLACK, "Null", 25);
                 h1 += 50;
                 h2 += 50;
-                ma.actions.selectItem = false;
             }
 
             loadRoundRect(pointer.getRX(), pointer.getRY(), 250, 45, WHITE, new BasicStroke(8.0f), 10, 10);

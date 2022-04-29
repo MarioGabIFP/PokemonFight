@@ -1,13 +1,10 @@
 package gui.frameable;
 
 import controller.battle.BattleActions;
-import controller.Orchestrator;
 import gui.Graphic;
 import java.awt.BasicStroke;
 import java.awt.Color;
 import java.awt.Image;
-import java.awt.event.KeyListener;
-import java.awt.event.WindowFocusListener;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -26,7 +23,6 @@ public class BattleView extends Graphic {
     @Override
     public void create() throws IOException, SAXException, ParserConfigurationException, InterruptedException {
         this.genderImages = new ArrayList<>();
-        Orchestrator ba = new Orchestrator(Orchestrator.ObjectTC.battle);
         
         // Establecemos el espacio de juego.
         g_0.setBounds(223, 64, 514, 512);
@@ -56,8 +52,6 @@ public class BattleView extends Graphic {
         add(g_0);
         pack();
         setVisible(true);
-        addKeyListener((KeyListener) ba);
-        addWindowFocusListener((WindowFocusListener) ba);
     }
 
     @Override

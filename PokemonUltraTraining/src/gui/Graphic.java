@@ -25,19 +25,18 @@ import org.xml.sax.SAXException;
 import gui.elements.screen.Form;
 import gui.elements.screen.IMaps;
 import gui.elements.screen.Models;
+import java.awt.Frame;
 
 /**
  * @author Mario Gabriel Núñez Alcázar de Velasco
  */
-public abstract class Graphic extends JFrame implements IMaps, Models, Form{
+public abstract class Graphic extends Frame implements IMaps, Models, Form{
     public Canvas g_0 = new Canvas();
     public BufferStrategy bs;
     public Graphics g;
-    public boolean update = true;
     
     public Graphic() {
         setUndecorated(true);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setBounds(100, 100, 960, 640);
         setMaximizedBounds(getBounds());
         setResizable(false);
@@ -46,14 +45,6 @@ public abstract class Graphic extends JFrame implements IMaps, Models, Form{
     public abstract void create() throws IOException, SAXException, ParserConfigurationException, InterruptedException;
     
     public abstract void update() throws IOException, InterruptedException;
-    
-    public void setUpdate(boolean update) {
-        this.update = update;
-    }
-
-    public boolean isUpdate() {
-        return update;
-    }
     
     @Override
     public void loadSprite(Image sprite, int x, int y) {

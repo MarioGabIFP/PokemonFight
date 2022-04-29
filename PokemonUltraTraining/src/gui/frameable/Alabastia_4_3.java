@@ -16,13 +16,11 @@ import org.xml.sax.SAXException;
  * @author Mario Gabriel Núñez Alcázar de Velasco
  */
 public class Alabastia_4_3 extends Graphic {
-    Orchestrator pl;
 
     @Override
     public void create() throws IOException, SAXException, ParserConfigurationException, InterruptedException {
         // Establecemos el espacio de juego.
         g_0.setBounds(223, 64, 514, 512);
-        pl = new Orchestrator(Orchestrator.ObjectTC.player);
 
         _map.setBounds(0, 0, g_0.getWidth(), g_0.getHeight());
         _map.setMapSprite(new File(_Alabastia_4_3 + "1.tsx"));
@@ -45,8 +43,6 @@ public class Alabastia_4_3 extends Graphic {
         add(g_0);
         pack();
         setVisible(true);
-        addKeyListener((KeyListener) pl);
-        addWindowFocusListener((WindowFocusListener) pl);
     }
 
     @Override

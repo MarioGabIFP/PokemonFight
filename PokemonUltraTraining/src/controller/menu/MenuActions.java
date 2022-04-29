@@ -10,8 +10,7 @@ import org.xml.sax.SAXException;
  */
 public class MenuActions extends Actions {
 
-    public MenuActions() throws IOException, SAXException, ParserConfigurationException, InterruptedException {
-    }
+    public MenuActions() throws IOException, SAXException, ParserConfigurationException, InterruptedException {}
 
     @Override
     public void KeyisPressed() {

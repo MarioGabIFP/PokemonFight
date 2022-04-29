@@ -2,7 +2,6 @@ package controller.player;
 
 import controller.Actions;
 import controller.ScreenController;
-import gui.frameable.Alabastia_4_3;
 import gui.frameable.Menu;
 import java.io.IOException;
 import java.util.logging.Level;
