@@ -1,6 +1,6 @@
 package gui.frameable;
 
-import controller.battle.BattleActions;
+import controller.elements.Opponents.values;
 import gui.Graphic;
 import java.awt.BasicStroke;
 import java.awt.Color;
@@ -28,16 +28,16 @@ public class BattleView extends Graphic {
         g_0.setBounds(223, 64, 514, 512);
         g_0.setBackground(new Color(0.086f, 0.714f, 0.404f));
 
-        if (BattleActions.values.player.getName().length() > 7) {
-            nameP = BattleActions.values.player.getName().substring(0, 7) + "..."; 
+        if (values.player.getName().length() > 7) {
+            nameP = values.player.getName().substring(0, 7) + "..."; 
         } else {
-            nameP = BattleActions.values.player.getName();
+            nameP = values.player.getName();
         }
         
-        if (BattleActions.values.enemy.getName().length() > 7) {
-            nameE = BattleActions.values.enemy.getName().substring(0, 7) + "..."; 
+        if (values.enemy.getName().length() > 7) {
+            nameE = values.enemy.getName().substring(0, 7) + "..."; 
         } else {
-            nameE = BattleActions.values.enemy.getName();
+            nameE = values.enemy.getName();
         }
         
         genderImages.addAll(tileMapper(new File(genderImg + "1.tsx"), genderImg));
@@ -68,7 +68,7 @@ public class BattleView extends Graphic {
         /*
          * Sprite Pokemon Jugador
          */
-        loadImage(ImageIO.read(new File(BattleActions.values.player.getTile())).getScaledInstance(144, 144, ALLBITS), 50, 125);
+        loadImage(ImageIO.read(new File(values.player.getTile())).getScaledInstance(144, 144, ALLBITS), 50, 125);
 
         /**
          * Pinta informacion jugador
@@ -77,19 +77,19 @@ public class BattleView extends Graphic {
         loadRoundRect(10 , 250, 287, 70, BLACK, new BasicStroke(6.0f), 10, 10);
         loadFillRoundRect(49, 291, 242, 19, new Color(0.322f, 0.412f, 0.341f), new BasicStroke(6.0f), 10, 10);
         loadLine(80, 300, 280, 300, WHITE, new BasicStroke(10.0f));
-        hpPrint(80, 280, 300, 300, BattleActions.values.player);
+        hpPrint(80, 280, 300, 300, values.player);
         loadString(50, 277, BLACK, nameP, 25);
-        loadImage(genderImages.get( switch (BattleActions.values.player.getGender()) {
+        loadImage(genderImages.get( switch (values.player.getGender()) {
                                         case male -> 1;
                                         case female -> 0;
                                     }).getScaledInstance(32, 32, ALLBITS), 19, 255);
         loadString(54, 305, new Color(0.941f, 0.702f, 0.286f), "HP", 15);
-        loadString(200, 277, BLACK, "LV " + BattleActions.values.player.getLV(), 25);
+        loadString(200, 277, BLACK, "LV " + values.player.getLV(), 25);
 
         /*
          * Sprite Pokemon Enemigo
          */
-        loadImage(ImageIO.read(new File(BattleActions.values.enemy.getTile())).getScaledInstance(144, 144, ALLBITS), 265, 40);
+        loadImage(ImageIO.read(new File(values.enemy.getTile())).getScaledInstance(144, 144, ALLBITS), 265, 40);
 
         /**
          * Pinta informacion enemigo
@@ -98,14 +98,14 @@ public class BattleView extends Graphic {
         loadRoundRect(10, 10, 287, 70, BLACK, new BasicStroke(6.0f), 10, 10);
         loadFillRoundRect(49, 47, 242, 19, new Color(0.322f, 0.412f, 0.341f), new BasicStroke(6.0f), 10, 10);
         loadLine(80, 56, 280, 56, WHITE, new BasicStroke(10.0f));
-        hpPrint(80, 280, 56, 56, BattleActions.values.enemy);
+        hpPrint(80, 280, 56, 56, values.enemy);
         loadString(55, 36, BLACK, nameE, 25);
-        loadImage(genderImages.get( switch (BattleActions.values.enemy.getGender()) {
+        loadImage(genderImages.get( switch (values.enemy.getGender()) {
                                         case male -> 1;
                                         case female -> 0;
                                     }).getScaledInstance(32, 32, ALLBITS), 19, 13);
         loadString(54, 61, new Color(0.941f, 0.702f, 0.286f), "HP", 15);
-        loadString(200, 36, BLACK, "LV " + BattleActions.values.enemy.getLV(), 25);
+        loadString(200, 36, BLACK, "LV " + values.enemy.getLV(), 25);
 
         /**
          * Recuadro inferior
@@ -121,7 +121,7 @@ public class BattleView extends Graphic {
         loadRoundRect(15, 345, 250, 155, new Color(0.941f, 0.702f, 0.286f), new BasicStroke(6.0f), 10, 10);
         loadRoundRect(10, 340, 260, 165, BLACK, new BasicStroke(8.0f), 10, 10);
         loadString(40, 400, BLACK, "¿Que va a hacer ", 20);
-        loadString(40, 425, BLACK, BattleActions.values.player.getName() + "?", 20);
+        loadString(40, 425, BLACK, values.player.getName() + "?", 20);
 
         /**
          * Recuadro de acciones
@@ -142,7 +142,7 @@ public class BattleView extends Graphic {
         bs.show();
     }
     
-    public void hpPrint(int sx, int fx, int sy, int fy, BattleActions.values p) {
+    public void hpPrint(int sx, int fx, int sy, int fy, values p) {
         int c = (((fx * p.getHP()) / 100) + sx);
         
         if (c > sx) {

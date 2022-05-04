@@ -1,6 +1,5 @@
-package controller.battle.elements;
+package controller.elements;
 
-import java.io.File;
 import model.pokemones.Pokemon.Gender;
 
 /**

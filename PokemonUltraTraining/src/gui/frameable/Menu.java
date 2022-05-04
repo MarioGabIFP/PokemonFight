@@ -1,6 +1,6 @@
 package gui.frameable;
 
-import controller.Orchestrator;
+import controller.Conductor;
 import controller.elements.Options.MenInfo;
 import gui.Graphic;
 import java.awt.BasicStroke;

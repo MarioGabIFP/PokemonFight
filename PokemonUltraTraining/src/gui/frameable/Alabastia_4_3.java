@@ -1,6 +1,6 @@
 package gui.frameable;
 
-import controller.Orchestrator;
+import controller.Conductor;
 import gui.Graphic;
 import java.awt.event.KeyListener;
 import java.awt.event.WindowFocusListener;

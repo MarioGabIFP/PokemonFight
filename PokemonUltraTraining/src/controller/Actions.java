@@ -1,23 +1,17 @@
 package controller;
 
-import gui.Graphic;
-import java.io.IOException;
-import javax.xml.parsers.ParserConfigurationException;
-import org.xml.sax.SAXException;
-
+import java.awt.Component;
+import java.awt.event.KeyEvent;
 /**
  * @author Mario Gabriel Núñez Alcázar de Velasco
  */
-public abstract class Actions extends Graphic {
-    public boolean selectItem = false;
+public class Actions extends KeyEvent {
 
-    public Actions() throws IOException, SAXException, ParserConfigurationException, InterruptedException {}
-    
-    public abstract void KeyisPressed();
-    
-    @Override
-    public void create() throws IOException, SAXException, ParserConfigurationException {}
+    public Actions(Component source, int id, long when, int modifiers, int keyCode, char keyChar, int keyLocation) {
+        super(source, id, when, modifiers, keyCode, keyChar, keyLocation);
+    }
 
-    @Override
-    public void update() throws IOException, InterruptedException {}
+    public Actions(Component source, int id, long when, int modifiers, int keyCode, char keyChar) {
+        super(source, id, when, modifiers, keyCode, keyChar);
+    }
 }
