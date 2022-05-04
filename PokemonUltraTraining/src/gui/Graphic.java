@@ -38,8 +38,8 @@ public abstract class Graphic extends Frame implements IMaps, Models, Form{
     
     protected final Canvas g_0 = new Canvas();
     
-    private final Actions actionController = new Actions();
-    private final Charger chargeController = new Charger();
+    private final Actions actionController = new Actions(this);
+    private final Charger chargeController = new Charger(this);
     
     public abstract void create() throws IOException, SAXException, ParserConfigurationException, InterruptedException;
     public abstract void update() throws IOException, InterruptedException;
