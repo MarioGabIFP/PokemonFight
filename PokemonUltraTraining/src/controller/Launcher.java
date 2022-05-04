@@ -19,6 +19,7 @@ public class Launcher implements Base {
      * @param args
      */
     public static void main(String[] args) throws IOException, SAXException, ParserConfigurationException, InterruptedException {
+        ScreenController.init();
         ScreenController.setScreen(new Alabastia_4_3());
     }
 }

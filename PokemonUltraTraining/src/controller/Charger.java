@@ -1,11 +1,10 @@
 package controller;
 
-import gui.Graphic;
-
 /**
  * @author Mario Gabriel Núñez Alcázar de Velasco
  */
-public class Charger extends Conductor {
-
-
+public class Charger {
+    public void charge() {
+        System.out.println("controller.Charger.charge()");
+    }
 }

@@ -1,13 +1,10 @@
 package gui.frameable;
 
-import controller.Conductor;
 import controller.elements.Options.MenInfo;
 import gui.Graphic;
 import java.awt.BasicStroke;
 import java.awt.Color;
 import java.awt.GradientPaint;
-import java.awt.event.KeyListener;
-import java.awt.event.WindowFocusListener;
 import static java.awt.image.ImageObserver.ALLBITS;
 import java.io.File;
 import java.io.IOException;
