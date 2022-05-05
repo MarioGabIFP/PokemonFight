@@ -1,11 +1,11 @@
 package gui.frameable;
 
-import controller.elements.Options.MenInfo;
 import gui.Graphic;
 import java.awt.BasicStroke;
 import java.awt.Color;
 import java.awt.GradientPaint;
 import static java.awt.image.ImageObserver.ALLBITS;
+import model.menu.Menu.MenuConstructor;
 import java.io.File;
 import java.io.IOException;
 import javax.xml.parsers.ParserConfigurationException;
@@ -19,12 +19,14 @@ import static gui.elements.screen.Models.pointer;
 /**
  * @author Mario Gabriel Núñez Alcázar de Velasco
  */
-public class Menu extends Graphic {
+public class Pokedex extends Graphic {
     String title;
+    
+    @Override public void act() {}
     
     @Override
     public void create() throws IOException, SAXException, ParserConfigurationException, InterruptedException {
-        this.title = MenInfo.getPokemonFromMultiball.getTitle();
+        this.title = MenuConstructor.PokedexValue.getPokedexV().getTitle();
         
         // Establecemos el espacio de juego.
         g_0.setBounds(223, 64, 514, 512);

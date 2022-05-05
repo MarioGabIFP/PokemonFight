@@ -13,7 +13,16 @@ import org.xml.sax.SAXException;
  * @author Mario Gabriel Núñez Alcázar de Velasco
  */
 public class Alabastia_4_3 extends Graphic {
-
+    @Override 
+    public void act() {
+        switch (super.getAdjust()) {
+            case down -> _map.setBounds(_map.getX(), _map.getY() + 5, _map.getWidth(), _map.getHeight());
+            case up -> _map.setBounds(_map.getX(), _map.getY() - 5, _map.getWidth(), _map.getHeight());
+            case left ->_map.setBounds(_map.getX() - 5, _map.getY(), _map.getWidth(), _map.getHeight());
+            case right -> _map.setBounds(_map.getX() + 5, _map.getY(), _map.getWidth(), _map.getHeight());
+        }
+    }
+    
     @Override
     public void create() throws IOException, SAXException, ParserConfigurationException, InterruptedException {
         // Establecemos el espacio de juego.

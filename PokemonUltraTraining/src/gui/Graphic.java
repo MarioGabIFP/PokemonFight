@@ -1,13 +1,12 @@
 package gui;
 
-import controller.Actions;
-import controller.Charger;
+import controller.logic.Actions;
+import controller.logic.Charger;
 import java.awt.BasicStroke;
 import java.awt.Canvas;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.GradientPaint;
-import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Image;
 import java.awt.image.BufferStrategy;
@@ -33,16 +32,23 @@ import java.awt.event.KeyListener;
  * @author Mario Gabriel Núñez Alcázar de Velasco
  */
 public abstract class Graphic extends Frame implements IMaps, Models, Form{
+    public enum Adjust{down,up,left,right}
+    
     public BufferStrategy bs;
     public Graphics2D g;
-    
-    protected final Canvas g_0 = new Canvas();
-    
-    private final Actions actionController = new Actions(this);
-    private final Charger chargeController = new Charger(this);
+    public Adjust adjust;
     
     public abstract void create() throws IOException, SAXException, ParserConfigurationException, InterruptedException;
     public abstract void update() throws IOException, InterruptedException;
+    public abstract void act();
+    
+    public final void setAdjust(Adjust adjust) {this.adjust = adjust;}
+    public final Adjust getAdjust() {return adjust;}
+    
+    public final Canvas g_0 = new Canvas();
+    
+    private final Actions actionController = new Actions(this);
+    private final Charger chargeController = new Charger(this);
     
     public Graphic() {
         setUndecorated(true);

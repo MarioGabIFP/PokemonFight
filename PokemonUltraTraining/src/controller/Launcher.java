@@ -1,5 +1,6 @@
 package controller;
 
+import controller.logic.ScreenController;
 import gui.elements.Base;
 import gui.frameable.Alabastia_4_3;
 import java.io.IOException;

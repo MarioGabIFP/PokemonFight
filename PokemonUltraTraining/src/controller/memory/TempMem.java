@@ -1,22 +1,21 @@
-package controller.elements;
+package controller.memory;
 
 import model.pokemones.Pokemon.Gender;
 
 /**
  * @author Mario Gabriel Núñez Alcázar de Velasco
  */
-public interface Opponents {
-    public enum values {
+public interface TempMem {
+    public enum BattleMem {
         player(null, null, 0, 0, ""),
         enemy(null, null, 0, 0, "");
 
-        String name;
+        String name, Tile;
+        int hp, lv;
+        
         Gender gender;
-        String Tile;
-        int hp;
-        int lv;
 
-        values (String name, String gender, int hp, int lv, String Sprite){};
+        BattleMem (String name, String gender, int hp, int lv, String Sprite){};
 
         public String getName() {return name;}
         public void setName(String name) {this.name = name;}
