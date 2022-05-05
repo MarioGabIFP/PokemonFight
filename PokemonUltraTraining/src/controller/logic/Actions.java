@@ -5,6 +5,7 @@ import static gui.elements.screen.Models.pointer;
 import gui.frameable.Alabastia_4_3;
 import gui.frameable.BattleScreen;
 import gui.frameable.Pokedex;
+import model.menu.Menu.PokedexValues;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.io.IOException;
@@ -144,7 +145,7 @@ public class Actions implements KeyListener {
             
             case 112 -> {
                 try {
-                    ScreenController.setScreen(new Pokedex());
+                    ScreenController.setScreen(new Pokedex(PokedexValues.getPokemonFromMultiball));
                 } catch (IOException | SAXException | ParserConfigurationException | InterruptedException ex) {
                     Logger.getLogger(Actions.class.getName()).log(Level.SEVERE, null, ex);
                 }
@@ -159,6 +160,13 @@ public class Actions implements KeyListener {
             case 114 -> {
                 try {
                     ScreenController.setScreen(new Alabastia_4_3());
+                } catch (IOException | SAXException | ParserConfigurationException | InterruptedException ex) {
+                    Logger.getLogger(Actions.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
+            case 115 -> {
+                try {
+                    ScreenController.setScreen(new Pokedex(PokedexValues.getEnemy));
                 } catch (IOException | SAXException | ParserConfigurationException | InterruptedException ex) {
                     Logger.getLogger(Actions.class.getName()).log(Level.SEVERE, null, ex);
                 }

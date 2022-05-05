@@ -15,12 +15,17 @@ import static gui.elements.Base.BLACK;
 import static gui.elements.Base.RED;
 import static gui.elements.Base.WHITE;
 import static gui.elements.screen.Models.pointer;
+import model.menu.Menu.PokedexValues;
 
 /**
  * @author Mario Gabriel Núñez Alcázar de Velasco
  */
 public class Pokedex extends Graphic {
     String title;
+
+    public Pokedex(PokedexValues pv) {
+        
+    }
     
     @Override public void act() {}
     

@@ -29,7 +29,6 @@ public class Menu extends Canvas {
         private PokedexValues PokedexV;
         private BattleOpt BO;
         
-        private MenuConstructor() {}
         private MenuConstructor(PokedexValues PokedexV) {this.PokedexV = PokedexV;}
         private MenuConstructor(BattleOpt BO) {this.BO = BO;}
 
