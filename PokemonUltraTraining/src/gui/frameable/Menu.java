@@ -1,14 +1,16 @@
-package model.menu;
+package gui.frameable;
 
-import java.awt.Canvas;
+import controller.memory.TempMem;
+import gui.Graphic;
 import java.awt.Image;
-import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
+import model.pokemones.Pokemon;
 
 /**
  * @author Mario Gabriel Núñez Alcázar de Velasco
  */
-public class Menu extends Canvas {
+public abstract class Menu extends Graphic implements TempMem{
     public enum BattleOpt {setfigth,miPokedex,miBag,exit}
     
     public enum PokedexValues {
@@ -37,14 +39,17 @@ public class Menu extends Canvas {
         public final void setPokedexV(PokedexValues PokedexV) {this.PokedexV = PokedexV;}
         public final void setBO(BattleOpt BO) {this.BO = BO;}
     }
-    
-    private ArrayList<Image> tiles = new ArrayList<>();
-    private File menuSprite;
 
-    public final void setMenuSprite(File mapSprite) {this.menuSprite = mapSprite;}
-    public final void setTiles(ArrayList<Image> tiles) {this.tiles = tiles;}
-    public final void setOpt(BattleOpt BO) {MenuConstructor.BattleOptn.setBO(BO);}
+    public Menu() throws IOException {}
+    
     public final void setOpt(PokedexValues PV) {MenuConstructor.PokedexValue.setPokedexV(PV);}
-    public final File getMenuSprite() {return menuSprite;}
     public final ArrayList<Image> getTiles() {return tiles;}
+    
+    public static Pokemon poke = pokemones.get(0);
+
+    private final ArrayList<Image> tiles = new ArrayList<>();
+    
+    public static final void viewOpt(Pokemon pok) {poke = pok;}
+    public static final void setOpt(Pokemon pok) {if (!pokemonSel.contains(pok)) pokemonSel.add(pok); else pokemonSel.remove(pok);}
+    public static final void setOpt(BattleOpt BO) {MenuConstructor.BattleOptn.setBO(BO);}
 }

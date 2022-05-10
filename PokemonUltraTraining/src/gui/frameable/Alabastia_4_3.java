@@ -13,6 +13,9 @@ import org.xml.sax.SAXException;
  * @author Mario Gabriel Núñez Alcázar de Velasco
  */
 public class Alabastia_4_3 extends Graphic {
+
+    public Alabastia_4_3() throws IOException {}
+    
     @Override 
     public void act() {
         switch (super.getAdjust()) {

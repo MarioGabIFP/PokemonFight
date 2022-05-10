@@ -3,7 +3,7 @@ package gui.frameable;
 import controller.memory.TempMem.BattleMem;
 import gui.Graphic;
 import java.awt.BasicStroke;
-import model.menu.Menu.MenuConstructor;
+import gui.frameable.Menu.MenuConstructor;
 import java.awt.Color;
 import java.awt.Image;
 import java.io.File;
@@ -19,6 +19,8 @@ import org.xml.sax.SAXException;
 public class BattleScreen extends Graphic {
     private ArrayList<Image> genderImages;
     private String nameP, nameE;
+
+    public BattleScreen() throws IOException {}
     
     @Override public void act() {
         switch (MenuConstructor.BattleOptn.getBO()) {
@@ -99,7 +101,7 @@ public class BattleScreen extends Graphic {
         /*
          * Sprite Pokemon Jugador
          */
-        loadImage(ImageIO.read(new File(BattleMem.player.getTile())).getScaledInstance(144, 144, ALLBITS), 50, 125);
+        loadImage(BattleMem.player.getTile().getScaledInstance(144, 144, ALLBITS), 50, 125);
 
         /**
          * Pinta informacion jugador
@@ -120,7 +122,7 @@ public class BattleScreen extends Graphic {
         /*
          * Sprite Pokemon Enemigo
          */
-        loadImage(ImageIO.read(new File(BattleMem.enemy.getTile())).getScaledInstance(144, 144, ALLBITS), 265, 40);
+        loadImage(BattleMem.enemy.getTile().getScaledInstance(144, 144, ALLBITS), 265, 40);
 
         /**
          * Pinta informacion enemigo

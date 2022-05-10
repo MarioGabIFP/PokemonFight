@@ -47,10 +47,10 @@ public abstract class Graphic extends Frame implements IMaps, Models, Form{
     
     public final Canvas g_0 = new Canvas();
     
-    private final Actions actionController = new Actions(this);
-    private final Charger chargeController = new Charger(this);
+    protected final Charger chargeController = new Charger(this);
+    protected final Actions actionController = new Actions(this);
     
-    public Graphic() {
+    public Graphic() throws IOException {
         setUndecorated(true);
         setBounds(100, 100, 960, 640);
         setMaximizedBounds(getBounds());

@@ -2,7 +2,7 @@ package gui.elements.screen;
 
 import java.awt.Image;
 import model.Player;
-import model.menu.Pointer;
+import model.Pointer;
 import model.Pokeball;
 import model.Trainer;
 import gui.elements.Assets;

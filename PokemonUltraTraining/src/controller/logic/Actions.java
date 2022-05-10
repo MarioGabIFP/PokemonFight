@@ -5,7 +5,7 @@ import static gui.elements.screen.Models.pointer;
 import gui.frameable.Alabastia_4_3;
 import gui.frameable.BattleScreen;
 import gui.frameable.Pokedex;
-import model.menu.Menu.PokedexValues;
+import gui.frameable.Menu.PokedexValues;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.io.IOException;
@@ -21,7 +21,7 @@ import org.xml.sax.SAXException;
 public class Actions implements KeyListener {
     private final Graphic screen;
     
-    public boolean selectItem = false;
+    private int pointerPos = 1;
     
     public Actions(Graphic screen) {this.screen = screen;}
     
@@ -37,7 +37,7 @@ public class Actions implements KeyListener {
                 }
                 
                 if (screen instanceof Pokedex) {
-                    selectItem = true;
+                    pointer.selectPokemon(pointerPos);
                 }
             }
             
@@ -65,8 +65,11 @@ public class Actions implements KeyListener {
                 
                 if (screen instanceof Pokedex) {
                     if (pointer.getRY() > 64) {
+                        pointerPos--;
                         pointer.setRY(pointer.getRY() - 50);
                         pointer.setBounds(pointer.getX(), pointer.getY() - 50, pointer.getWidth(), pointer.getHeight());
+                        
+                        pointer.preSel(pointerPos);
                     }
                 }
                 
@@ -102,9 +105,12 @@ public class Actions implements KeyListener {
                 }
                 
                 if (screen instanceof Pokedex) {
-                    if (pointer.getRY() < 353) {
+                    if (pointer.getRY() < 353 && pointer.getLimit() > pointerPos) {
+                        pointerPos++;
                         pointer.setRY(pointer.getRY() + 50);
                         pointer.setBounds(pointer.getX(), pointer.getY() + 50, pointer.getWidth(), pointer.getHeight());
+                        
+                        pointer.preSel(pointerPos);
                     }
                 }
                 
