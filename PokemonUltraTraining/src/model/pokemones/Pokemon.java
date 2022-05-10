@@ -30,7 +30,7 @@ public class Pokemon implements Movements {
     protected int iv;
     protected int ev;
     protected Gender gender;
-    protected Type type;
+    protected Type[] type;
     protected Nature nature;
     protected int level;
     protected Image tile;
@@ -52,7 +52,7 @@ public class Pokemon implements Movements {
     public int getIv() {return iv;}
     public int getEv() {return ev;}
     public Gender getGender() {return gender;}
-    public Type getType() {return type;}
+    public Type[] getType() {return type;}
     public Nature getNature() {return nature;}
     public int getLevel() {return level;}
     public Image getTile() {return tile;}

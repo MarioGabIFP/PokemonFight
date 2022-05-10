@@ -11,20 +11,20 @@ import model.pokemones.miscellaneus.Type;
 /**
  * @author Mario Gabriel Núñez Alcázar de Velasco
  */
-public class Pikachu extends Pokemon {
-    public Pikachu() {
-        id = 25;
-        name = "Pikachu";
-        gender = Gender.female;
-        type = new Type[]{Type.electrico};
-        level = 10;
-        hp = 13;
+public class Bulbasaur extends Pokemon {
+    public Bulbasaur() {
+        id = 1;
+        name = "Bulbasaur";
+        gender = Gender.male;
+        type = new Type[]{Type.planta, Type.veneno};
+        level = 12;
+        hp = 27;
         
         try {
             tile = ImageIO.read(new File(Graphic.spritesPokemon + "gen3/" + id + "/" + id + ".png"));
             backTile = ImageIO.read(new File(Graphic.spritesPokemon + "gen3/" + id + "/" + id + "_b.png"));
         } catch (IOException ex) {
-            Logger.getLogger(Pikachu.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Bulbasaur.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 }

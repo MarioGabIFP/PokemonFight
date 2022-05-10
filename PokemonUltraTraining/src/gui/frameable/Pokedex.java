@@ -17,6 +17,7 @@ import static gui.elements.screen.Models.pointer;
 import gui.frameable.Menu.PokedexValues;
 import java.awt.Image;
 import java.util.ArrayList;
+import java.util.Arrays;
 import model.pokemones.Pokemon;
 
 /**
@@ -125,7 +126,7 @@ public class Pokedex extends Menu {
                                     }).getScaledInstance(32, 32, ALLBITS), 30, 355);
             loadString(70, 377, BLACK, "LV" + poke.getLevel(), 25);
             loadString(140, 377, BLACK, "HP" + poke.getHp(), 25);
-            loadString(35, 433, BLACK, poke.getType().name(), 25);
+            loadString(35, 433, BLACK, Arrays.toString(poke.getType()), 25);
 
             /*
              * Lista Pokemones

@@ -1,6 +1,5 @@
 package model.pokemones;
 
-import static controller.memory.TempMem.pokemones;
 import gui.Graphic;
 import java.io.File;
 import java.io.IOException;
@@ -17,9 +16,9 @@ public class Charmander extends Pokemon {
         id = 4;
         name = "Charmander";
         gender = Gender.male;
-        type = Type.fuego;
+        type = new Type[]{Type.planta, Type.fuego};
         level = 13;
-        hp = 43;
+        hp = 12;
         
         try {
             tile = ImageIO.read(new File(Graphic.spritesPokemon + "gen3/" + id + "/" + id + ".png"));

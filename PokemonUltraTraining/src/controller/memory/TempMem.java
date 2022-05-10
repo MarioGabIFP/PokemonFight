@@ -4,10 +4,13 @@ import java.awt.Image;
 import java.util.ArrayList;
 import java.util.Arrays;
 import model.Trainer;
+import model.pokemones.Bulbasaur;
 import model.pokemones.Charmander;
+import model.pokemones.Ivysaur;
 import model.pokemones.Pikachu;
 import model.pokemones.Pokemon;
 import model.pokemones.Pokemon.Gender;
+import model.pokemones.Venusaur;
 
 /**
  * @author Mario Gabriel Núñez Alcázar de Velasco
@@ -50,6 +53,6 @@ public interface TempMem {
         public void addPoke(Pokemon pok) {this.selPok.add(pok);}
     }
     
-    public static final ArrayList<Pokemon> pokemones = new ArrayList<>(Arrays.asList(new Pikachu(), new Charmander()));
+    public static final ArrayList<Pokemon> pokemones = new ArrayList<>(Arrays.asList(new Bulbasaur(), new Ivysaur(), new Venusaur(), new Pikachu(), new Charmander()));
     public static final ArrayList<Pokemon> pokemonSel = new ArrayList<>();
 }
