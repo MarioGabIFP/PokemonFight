@@ -53,6 +53,11 @@ public interface Assets extends Base {
     String genderImg = "assets/sprites/pokemon/gender/";
     
     /**
+     * <strong>Simbolos del Sexo de Pokemones</strong>.
+     */
+    String typesImg = "assets/sprites/pokemon/types/";
+    
+    /**
      * <strong>Sprites de los Pokemones</strong>.
      */
     String spritesPokemon = "assets/sprites/pokemon/";

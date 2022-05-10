@@ -1,13 +1,14 @@
 package model.pokemones;
 
 import java.awt.Image;
-import model.pokemones.miscellaneus.Movements;
-import model.pokemones.miscellaneus.Type;
+import java.util.ArrayList;
+import model.pokemones.movimientos.Movements;
+import model.pokemones.tipos.Type;
 
 /**
  * @author Mario Gabriel Núñez Alcázar de Velasco
  */
-public class Pokemon implements Movements {
+public class Pokemon implements Type, Movements {
     public enum Gender {male,female;}
     
     public enum Nature {
@@ -17,6 +18,7 @@ public class Pokemon implements Movements {
         
         Nature (float value) {this.value = value;}
     }
+    
     
     protected int id;
     protected int hp;
@@ -29,8 +31,9 @@ public class Pokemon implements Movements {
     protected int evasion;
     protected int iv;
     protected int ev;
+    protected ArrayList<Types> types = new ArrayList<>();
+    protected ArrayList<Attacks> attacks = new ArrayList<>();
     protected Gender gender;
-    protected Type[] type;
     protected Nature nature;
     protected int level;
     protected Image tile;
@@ -52,10 +55,11 @@ public class Pokemon implements Movements {
     public int getIv() {return iv;}
     public int getEv() {return ev;}
     public Gender getGender() {return gender;}
-    public Type[] getType() {return type;}
     public Nature getNature() {return nature;}
     public int getLevel() {return level;}
     public Image getTile() {return tile;}
     public Image getBackTile() {return backTile;}
     public String getName() {return name;}
+    public ArrayList<Types> getTypes() {return types;}
+    public ArrayList<Attacks> getAttacks() {return attacks;}
 }

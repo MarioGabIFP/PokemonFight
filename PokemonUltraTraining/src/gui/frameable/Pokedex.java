@@ -17,14 +17,15 @@ import static gui.elements.screen.Models.pointer;
 import gui.frameable.Menu.PokedexValues;
 import java.awt.Image;
 import java.util.ArrayList;
-import java.util.Arrays;
 import model.pokemones.Pokemon;
+import model.pokemones.tipos.Type.Types;
 
 /**
  * @author Mario Gabriel Núñez Alcázar de Velasco
  */
 public class Pokedex extends Menu {
     private ArrayList<Image> genderImages;
+    private ArrayList<Image> typeImages;
     String title;
 
     public Pokedex() throws IOException {}
@@ -35,9 +36,11 @@ public class Pokedex extends Menu {
     @Override
     public void create() throws IOException, SAXException, ParserConfigurationException, InterruptedException {
         this.genderImages = new ArrayList<>();
+        this.typeImages = new ArrayList<>();
         this.title = MenuConstructor.PokedexValue.getPokedexV().getTitle();
         
         genderImages.addAll(tileMapper(new File(genderImg + "1.tsx"), genderImg));
+        typeImages.addAll(tileMapper(new File(typesImg + "1.tsx"), typesImg));
         
         // Establecemos el espacio de juego.
         g_0.setBounds(223, 64, 514, 512);
@@ -120,13 +123,24 @@ public class Pokedex extends Menu {
                 h2 += 55;
             }
             
-            loadImage(genderImages.get( switch (poke.getGender()) {
+            loadImage(genderImages.get(switch (poke.getGender()) {
                                         case male -> 1;
                                         case female -> 0;
                                     }).getScaledInstance(32, 32, ALLBITS), 30, 355);
+            
+            h1 = 5;
+            for (Types t : poke.getTypes()) {
+                loadImage(typeImages.get(switch (t) {
+                                            case grass -> 0;
+                                            case normal -> 4;
+                                            case electric -> 2;
+                                            case fire -> 1;
+                                            case poison -> 3;
+                                        }), h1 += 35, 417);
+            }
+            
             loadString(70, 377, BLACK, "LV" + poke.getLevel(), 25);
             loadString(140, 377, BLACK, "HP" + poke.getHp(), 25);
-            loadString(35, 433, BLACK, Arrays.toString(poke.getType()), 25);
 
             /*
              * Lista Pokemones

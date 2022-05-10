@@ -3,20 +3,23 @@ package model.pokemones;
 import gui.Graphic;
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.imageio.ImageIO;
-import model.pokemones.miscellaneus.Type;
+import model.pokemones.tipos.Electric;
+import model.pokemones.tipos.Normal;
 
 /**
  * @author Mario Gabriel Núñez Alcázar de Velasco
  */
-public class Pikachu extends Pokemon {
+public class Pikachu extends Pokemon implements Normal, Electric{
     public Pikachu() {
         id = 25;
         name = "Pikachu";
         gender = Gender.female;
-        type = new Type[]{Type.electrico};
+        types = new ArrayList<>(Arrays.asList(tNormal,tElectric));
         level = 10;
         hp = 13;
         

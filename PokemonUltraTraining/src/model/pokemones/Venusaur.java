@@ -3,20 +3,25 @@ package model.pokemones;
 import gui.Graphic;
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.imageio.ImageIO;
-import model.pokemones.miscellaneus.Type;
+import model.pokemones.tipos.Grass;
+import model.pokemones.tipos.Normal;
+import model.pokemones.tipos.Poison;
+import model.pokemones.tipos.Type;
 
 /**
  * @author Mario Gabriel Núñez Alcázar de Velasco
  */
-public class Venusaur extends Pokemon {
+public class Venusaur extends Pokemon implements Normal, Grass, Poison {
     public Venusaur() {
         id = 3;
         name = "Venusaur";
         gender = Gender.male;
-        type = new Type[]{Type.planta, Type.veneno};
+        types = new ArrayList<>(Arrays.asList(tNormal,tGrass,tPoison));
         level = 32;
         hp = 54;
         
