@@ -1,0 +1,874 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class-diagram version="1.2.4" icons="true" automaticImage="PNG" always-add-relationships="false" generalizations="true" 
+  realizations="true" associations="true" dependencies="false" nesting-relationships="true" router="FAN">  
+  <class id="1" language="java" name="model.Map" project="PokemonUltraTraining" 
+    file="/PokemonUltraTraining/src/model/Map.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="118" y="3"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="2" language="java" name="model.pokemones.tipos.Type" project="PokemonUltraTraining" 
+    file="/PokemonUltraTraining/src/model/pokemones/tipos/Type.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="2959" y="729"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <interface id="3" language="java" name="gui.elements.Base" project="PokemonUltraTraining" 
+    file="/PokemonUltraTraining/src/gui/elements/Base.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="147" y="364"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <interface id="4" language="java" name="model.pokemones.tipos.Fire" project="PokemonUltraTraining" 
+    file="/PokemonUltraTraining/src/model/pokemones/tipos/Fire.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="2972" y="905"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="5" language="java" name="model.pokemones.Venusaur" project="PokemonUltraTraining" 
+    file="/PokemonUltraTraining/src/model/pokemones/Venusaur.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="2628" y="1107"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="6" language="java" name="gui.frameable.Menu" project="PokemonUltraTraining" 
+    file="/PokemonUltraTraining/src/gui/frameable/Menu.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1691" y="524"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="7" language="java" name="model.pokemones.Pikachu" project="PokemonUltraTraining" 
+    file="/PokemonUltraTraining/src/model/pokemones/Pikachu.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="2315" y="1110"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <enumeration id="8" language="java" name="gui.frameable.Menu.MenuConstructor" project="PokemonUltraTraining" 
+    file="/PokemonUltraTraining/src/gui/frameable/Menu.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1398" y="851"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </enumeration>  
+  <enumeration id="9" language="java" name="model.Player.Dir" project="PokemonUltraTraining" 
+    file="/PokemonUltraTraining/src/model/Player.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="2267" y="474"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </enumeration>  
+  <class id="10" language="java" name="gui.frameable.BattleScreen" project="PokemonUltraTraining" 
+    file="/PokemonUltraTraining/src/gui/frameable/BattleScreen.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1647" y="10"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <enumeration id="11" language="java" name="controller.memory.TempMem.BattleMem" project="PokemonUltraTraining" 
+    file="/PokemonUltraTraining/src/controller/memory/TempMem.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1995" y="335"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </enumeration>  
+  <enumeration id="12" language="java" name="gui.Graphic.Adjust" project="PokemonUltraTraining" 
+    file="/PokemonUltraTraining/src/gui/Graphic.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="867" y="192"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </enumeration>  
+  <enumeration id="13" language="java" name="controller.memory.TempMem.MenuMem" project="PokemonUltraTraining" 
+    file="/PokemonUltraTraining/src/controller/memory/TempMem.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1957" y="-15"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </enumeration>  
+  <interface id="14" language="java" name="model.pokemones.tipos.Normal" project="PokemonUltraTraining" 
+    file="/PokemonUltraTraining/src/model/pokemones/tipos/Normal.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="3156" y="905"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <interface id="15" language="java" name="model.pokemones.movimientos.Tackle" project="PokemonUltraTraining" 
+    file="/PokemonUltraTraining/src/model/pokemones/movimientos/Tackle.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="2964" y="574"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="16" language="java" name="controller.Launcher" project="PokemonUltraTraining" 
+    file="/PokemonUltraTraining/src/controller/Launcher.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="102" y="194"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <enumeration id="17" language="java" name="model.Pokeball.Typ" project="PokemonUltraTraining" 
+    file="/PokemonUltraTraining/src/model/Pokeball.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="372" y="346"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </enumeration>  
+  <class id="18" language="java" name="model.pokemones.Charmander" project="PokemonUltraTraining" 
+    file="/PokemonUltraTraining/src/model/pokemones/Charmander.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="2495" y="1108"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="19" language="java" name="gui.Graphic" project="PokemonUltraTraining" 
+    file="/PokemonUltraTraining/src/gui/Graphic.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1239" y="393"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="20" language="java" name="gui.elements.screen.Models" project="PokemonUltraTraining" 
+    file="/PokemonUltraTraining/src/gui/elements/screen/Models.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="127" y="863"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="21" language="java" name="model.Player" project="PokemonUltraTraining" 
+    file="/PokemonUltraTraining/src/model/Player.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1990" y="700"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="22" language="java" name="model.pokemones.tipos.Poison" project="PokemonUltraTraining" 
+    file="/PokemonUltraTraining/src/model/pokemones/tipos/Poison.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="3148" y="683"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="23" language="java" name="model.Pointer" project="PokemonUltraTraining" 
+    file="/PokemonUltraTraining/src/model/Pointer.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="641" y="147"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="24" language="java" name="gui.elements.Assets" project="PokemonUltraTraining" 
+    file="/PokemonUltraTraining/src/gui/elements/Assets.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="163" y="622"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="25" language="java" name="gui.frameable.Pokedex" project="PokemonUltraTraining" 
+    file="/PokemonUltraTraining/src/gui/frameable/Pokedex.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1066" y="837"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="26" language="java" name="model.Trainer" project="PokemonUltraTraining" 
+    file="/PokemonUltraTraining/src/model/Trainer.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="2572" y="29"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="27" language="java" name="gui.elements.screen.Form" project="PokemonUltraTraining" 
+    file="/PokemonUltraTraining/src/gui/elements/screen/Form.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="579" y="621"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <interface id="28" language="java" name="model.pokemones.movimientos.Perforator" project="PokemonUltraTraining" 
+    file="/PokemonUltraTraining/src/model/pokemones/movimientos/Perforator.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="3201" y="555"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="29" language="java" name="controller.logic.Actions" project="PokemonUltraTraining" 
+    file="/PokemonUltraTraining/src/controller/logic/Actions.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="889" y="-15"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="30" language="java" name="gui.elements.screen.IMaps" project="PokemonUltraTraining" 
+    file="/PokemonUltraTraining/src/gui/elements/screen/IMaps.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="438" y="837"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <interface id="31" language="java" name="model.pokemones.movimientos.Movements" project="PokemonUltraTraining" 
+    file="/PokemonUltraTraining/src/model/pokemones/movimientos/Movements.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="2891" y="271"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <enumeration id="32" language="java" name="gui.frameable.Menu.BattleOpt" project="PokemonUltraTraining" 
+    file="/PokemonUltraTraining/src/gui/frameable/Menu.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1398" y="1202"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </enumeration>  
+  <enumeration id="33" language="java" name="model.pokemones.Pokemon.Nature" project="PokemonUltraTraining" 
+    file="/PokemonUltraTraining/src/model/pokemones/Pokemon.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="2267" y="659"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </enumeration>  
+  <enumeration id="34" language="java" name="gui.frameable.Menu.PokedexValues" project="PokemonUltraTraining" 
+    file="/PokemonUltraTraining/src/gui/frameable/Menu.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="982" y="1136"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </enumeration>  
+  <interface id="35" language="java" name="controller.memory.TempMem" project="PokemonUltraTraining" 
+    file="/PokemonUltraTraining/src/controller/memory/TempMem.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1685" y="252"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="36" language="java" name="model.Pokeball" project="PokemonUltraTraining" 
+    file="/PokemonUltraTraining/src/model/Pokeball.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="375" y="48"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <enumeration id="37" language="java" name="model.pokemones.Pokemon.Gender" project="PokemonUltraTraining" 
+    file="/PokemonUltraTraining/src/model/pokemones/Pokemon.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="2270" y="216"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </enumeration>  
+  <class id="38" language="java" name="controller.logic.Charger" project="PokemonUltraTraining" 
+    file="/PokemonUltraTraining/src/controller/logic/Charger.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1352" y="-33"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <enumeration id="39" language="java" name="model.pokemones.movimientos.Movements.Attacks" 
+    project="PokemonUltraTraining" file="/PokemonUltraTraining/src/model/pokemones/movimientos/Movements.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="3199" y="254"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </enumeration>  
+  <class id="40" language="java" name="model.pokemones.Ivysaur" project="PokemonUltraTraining" 
+    file="/PokemonUltraTraining/src/model/pokemones/Ivysaur.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="2963" y="1100"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="41" language="java" name="model.pokemones.movimientos.Stomp" project="PokemonUltraTraining" 
+    file="/PokemonUltraTraining/src/model/pokemones/movimientos/Stomp.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="3197" y="430"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <interface id="42" language="java" name="model.pokemones.tipos.Electric" project="PokemonUltraTraining" 
+    file="/PokemonUltraTraining/src/model/pokemones/tipos/Electric.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="2788" y="905"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="43" language="java" name="controller.logic.ScreenController" project="PokemonUltraTraining" 
+    file="/PokemonUltraTraining/src/controller/logic/ScreenController.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1106" y="-24"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="44" language="java" name="model.pokemones.tipos.Grass" project="PokemonUltraTraining" 
+    file="/PokemonUltraTraining/src/model/pokemones/tipos/Grass.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="3156" y="798"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="45" language="java" name="model.pokemones.Pokemon" project="PokemonUltraTraining" 
+    file="/PokemonUltraTraining/src/model/pokemones/Pokemon.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="2573" y="606"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="46" language="java" name="model.pokemones.Bulbasaur" project="PokemonUltraTraining" 
+    file="/PokemonUltraTraining/src/model/pokemones/Bulbasaur.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="2792" y="1103"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="47" language="java" name="gui.frameable.Alabastia_4_3" project="PokemonUltraTraining" 
+    file="/PokemonUltraTraining/src/gui/frameable/Alabastia_4_3.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="853" y="367"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <enumeration id="48" language="java" name="model.pokemones.tipos.Type.Types" project="PokemonUltraTraining" 
+    file="/PokemonUltraTraining/src/model/pokemones/tipos/Type.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="2775" y="721"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </enumeration>  
+  <generalization id="49">    
+    <bendpoint x="2556" y="1021"/>    
+    <end type="SOURCE" refId="5"/>    
+    <end type="TARGET" refId="45"/>  
+  </generalization>  
+  <realization id="50">    
+    <bendpoint x="2624" y="1171"/>    
+    <bendpoint x="3251" y="1171"/>    
+    <bendpoint x="3251" y="802"/>    
+    <end type="SOURCE" refId="5"/>    
+    <end type="TARGET" refId="44"/>  
+  </realization>  
+  <association id="51">    
+    <bendpoint x="2380" y="75"/>    
+    <end type="SOURCE" refId="13" navigable="false">      
+      <attribute id="52" name="selPok"/>      
+      <multiplicity id="53" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="45" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="54">    
+    <bendpoint x="934" y="624"/>    
+    <end type="SOURCE" refId="19"/>    
+    <end type="TARGET" refId="27"/>  
+  </realization>  
+  <generalization id="55">    
+    <end type="SOURCE" refId="42"/>    
+    <end type="TARGET" refId="2"/>  
+  </generalization>  
+  <realization id="56">    
+    <bendpoint x="782" y="929"/>    
+    <bendpoint x="336" y="928"/>    
+    <end type="SOURCE" refId="19"/>    
+    <end type="TARGET" refId="20"/>  
+  </realization>  
+  <generalization id="57">    
+    <end type="SOURCE" refId="22"/>    
+    <end type="TARGET" refId="2"/>  
+  </generalization>  
+  <association id="58">    
+    <bendpoint x="2738" y="170"/>    
+    <end type="SOURCE" refId="45" navigable="false">      
+      <attribute id="59" name="attacks"/>      
+      <multiplicity id="60" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="39" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="61">    
+    <bendpoint x="2317" y="1200"/>    
+    <bendpoint x="2882" y="1198"/>    
+    <bendpoint x="2869" y="1008"/>    
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="42"/>  
+  </realization>  
+  <generalization id="62">    
+    <end type="SOURCE" refId="15"/>    
+    <end type="TARGET" refId="31"/>  
+  </generalization>  
+  <association id="63">    
+    <end type="SOURCE" refId="45" navigable="false">      
+      <attribute id="64" name="types"/>      
+      <multiplicity id="65" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="48" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="66">    
+    <bendpoint x="2794" y="1277"/>    
+    <bendpoint x="3148" y="1276"/>    
+    <bendpoint x="3178" y="1103"/>    
+    <end type="SOURCE" refId="46"/>    
+    <end type="TARGET" refId="14"/>  
+  </realization>  
+  <realization id="67">    
+    <bendpoint x="2622" y="1163"/>    
+    <bendpoint x="3126" y="1163"/>    
+    <bendpoint x="3116" y="1055"/>    
+    <end type="SOURCE" refId="5"/>    
+    <end type="TARGET" refId="14"/>  
+  </realization>  
+  <association id="68">    
+    <end type="SOURCE" refId="25" navigable="false">      
+      <attribute id="69" name="type"/>      
+      <multiplicity id="70" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="34" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="71">    
+    <bendpoint x="2496" y="1206"/>    
+    <bendpoint x="3147" y="1207"/>    
+    <end type="SOURCE" refId="18"/>    
+    <end type="TARGET" refId="14"/>  
+  </realization>  
+  <association id="72">    
+    <end type="SOURCE" refId="38" navigable="false">      
+      <attribute id="73" name="screen"/>      
+      <multiplicity id="74" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="19" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="75">    
+    <bendpoint x="2711" y="1154"/>    
+    <bendpoint x="3040" y="1155"/>    
+    <bendpoint x="3281" y="980"/>    
+    <bendpoint x="3279" y="673"/>    
+    <end type="SOURCE" refId="5"/>    
+    <end type="TARGET" refId="22"/>  
+  </realization>  
+  <generalization id="76">    
+    <end type="SOURCE" refId="6"/>    
+    <end type="TARGET" refId="19"/>  
+  </generalization>  
+  <association id="77">    
+    <end type="SOURCE" refId="8" navigable="false">      
+      <attribute id="78" name="PokedexV"/>      
+      <multiplicity id="79" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="34" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="80">    
+    <bendpoint x="2194" y="820"/>    
+    <bendpoint x="2347" y="820"/>    
+    <end type="SOURCE" refId="21" navigable="false">      
+      <attribute id="81" name="pokeBuffer"/>      
+      <multiplicity id="82" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="45" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <nesting id="83">    
+    <end type="SOURCE" refId="45"/>    
+    <end type="TARGET" refId="33"/>  
+  </nesting>  
+  <generalization id="84">    
+    <end type="SOURCE" refId="30"/>    
+    <end type="TARGET" refId="24"/>  
+  </generalization>  
+  <association id="85">    
+    <end type="SOURCE" refId="45" navigable="false">      
+      <attribute id="86" name="gender"/>      
+      <multiplicity id="87" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="37" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="88">    
+    <bendpoint x="1837" y="872"/>    
+    <bendpoint x="2395" y="872"/>    
+    <end type="SOURCE" refId="6" navigable="false">      
+      <attribute id="89" name="poke"/>      
+      <multiplicity id="90" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="45" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="91">    
+    <end type="SOURCE" refId="19" navigable="false">      
+      <attribute id="92" name="chargeController"/>      
+      <multiplicity id="93" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="38" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="94">    
+    <bendpoint x="2853" y="1037"/>    
+    <bendpoint x="2681" y="1018"/>    
+    <end type="SOURCE" refId="40"/>    
+    <end type="TARGET" refId="45"/>  
+  </generalization>  
+  <realization id="95">    
+    <bendpoint x="2794" y="1253"/>    
+    <bendpoint x="3256" y="1254"/>    
+    <bendpoint x="3265" y="845"/>    
+    <end type="SOURCE" refId="46"/>    
+    <end type="TARGET" refId="44"/>  
+  </realization>  
+  <generalization id="96">    
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="45"/>  
+  </generalization>  
+  <realization id="97">    
+    <bendpoint x="1537" y="161"/>    
+    <bendpoint x="1681" y="161"/>    
+    <end type="SOURCE" refId="38"/>    
+    <end type="TARGET" refId="35"/>  
+  </realization>  
+  <generalization id="98">    
+    <end type="SOURCE" refId="41"/>    
+    <end type="TARGET" refId="31"/>  
+  </generalization>  
+  <realization id="99">    
+    <bendpoint x="2842" y="606"/>    
+    <end type="SOURCE" refId="45"/>    
+    <end type="TARGET" refId="2"/>  
+  </realization>  
+  <generalization id="100">    
+    <end type="SOURCE" refId="24"/>    
+    <end type="TARGET" refId="3"/>  
+  </generalization>  
+  <realization id="101">    
+    <end type="SOURCE" refId="45"/>    
+    <end type="TARGET" refId="31"/>  
+  </realization>  
+  <realization id="102">    
+    <end type="SOURCE" refId="6"/>    
+    <end type="TARGET" refId="35"/>  
+  </realization>  
+  <nesting id="103">    
+    <end type="SOURCE" refId="6"/>    
+    <end type="TARGET" refId="8"/>  
+  </nesting>  
+  <association id="104">    
+    <end type="SOURCE" refId="11" navigable="false">      
+      <attribute id="105" name="gender"/>      
+      <multiplicity id="106" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="37" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="107">    
+    <end type="SOURCE" refId="47"/>    
+    <end type="TARGET" refId="19"/>  
+  </generalization>  
+  <nesting id="108">    
+    <bendpoint x="1562" y="753"/>    
+    <bendpoint x="1562" y="964"/>    
+    <bendpoint x="1194" y="1135"/>    
+    <end type="SOURCE" refId="6"/>    
+    <end type="TARGET" refId="34"/>  
+  </nesting>  
+  <nesting id="109">    
+    <end type="SOURCE" refId="35"/>    
+    <end type="TARGET" refId="13"/>  
+  </nesting>  
+  <association id="110">    
+    <end type="SOURCE" refId="45" navigable="false">      
+      <attribute id="111" name="nature"/>      
+      <multiplicity id="112" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="33" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <nesting id="113">    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="48"/>  
+  </nesting>  
+  <association id="114">    
+    <end type="SOURCE" refId="36" navigable="false">      
+      <attribute id="115" name="pokeballType"/>      
+      <multiplicity id="116" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="17" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <nesting id="117">    
+    <end type="SOURCE" refId="31"/>    
+    <end type="TARGET" refId="39"/>  
+  </nesting>  
+  <nesting id="118">    
+    <end type="SOURCE" refId="19"/>    
+    <end type="TARGET" refId="12"/>  
+  </nesting>  
+  <nesting id="119">    
+    <end type="SOURCE" refId="35"/>    
+    <end type="TARGET" refId="11"/>  
+  </nesting>  
+  <association id="120">    
+    <end type="SOURCE" refId="26" navigable="false">      
+      <attribute id="121" name="pokeBuffer"/>      
+      <multiplicity id="122" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="45" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="123">    
+    <end type="SOURCE" refId="8" navigable="false">      
+      <attribute id="124" name="BO"/>      
+      <multiplicity id="125" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="32" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <nesting id="126">    
+    <end type="SOURCE" refId="21"/>    
+    <end type="TARGET" refId="9"/>  
+  </nesting>  
+  <realization id="127">    
+    <bendpoint x="3238" y="1126"/>    
+    <bendpoint x="3246" y="824"/>    
+    <end type="SOURCE" refId="40"/>    
+    <end type="TARGET" refId="44"/>  
+  </realization>  
+  <association id="128">    
+    <end type="SOURCE" refId="43" navigable="false">      
+      <attribute id="129" name="graphics"/>      
+      <multiplicity id="130" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="19" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <nesting id="131">    
+    <end type="SOURCE" refId="36"/>    
+    <end type="TARGET" refId="17"/>  
+  </nesting>  
+  <generalization id="132">    
+    <end type="SOURCE" refId="14"/>    
+    <end type="TARGET" refId="2"/>  
+  </generalization>  
+  <association id="133">    
+    <end type="SOURCE" refId="19" navigable="false">      
+      <attribute id="134" name="actionController"/>      
+      <multiplicity id="135" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="29" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <nesting id="136">    
+    <end type="SOURCE" refId="45"/>    
+    <end type="TARGET" refId="37"/>  
+  </nesting>  
+  <generalization id="137">    
+    <end type="SOURCE" refId="20"/>    
+    <end type="TARGET" refId="24"/>  
+  </generalization>  
+  <generalization id="138">    
+    <end type="SOURCE" refId="27"/>    
+    <end type="TARGET" refId="24"/>  
+  </generalization>  
+  <generalization id="139">    
+    <end type="SOURCE" refId="28"/>    
+    <end type="TARGET" refId="31"/>  
+  </generalization>  
+  <realization id="140">    
+    <bendpoint x="761" y="839"/>    
+    <end type="SOURCE" refId="19"/>    
+    <end type="TARGET" refId="30"/>  
+  </realization>  
+  <generalization id="141">    
+    <end type="SOURCE" refId="25"/>    
+    <end type="TARGET" refId="6"/>  
+  </generalization>  
+  <association id="142">    
+    <end type="SOURCE" refId="19" navigable="false">      
+      <attribute id="143" name="adjust"/>      
+      <multiplicity id="144" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="12" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="145">    
+    <end type="SOURCE" refId="13" navigable="false">      
+      <attribute id="146" name="trainer"/>      
+      <multiplicity id="147" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="26" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="148">    
+    <end type="SOURCE" refId="18"/>    
+    <end type="TARGET" refId="45"/>  
+  </generalization>  
+  <realization id="149">    
+    <bendpoint x="3260" y="1142"/>    
+    <bendpoint x="3259" y="728"/>    
+    <end type="SOURCE" refId="40"/>    
+    <end type="TARGET" refId="22"/>  
+  </realization>  
+  <generalization id="150">    
+    <end type="SOURCE" refId="10"/>    
+    <end type="TARGET" refId="19"/>  
+  </generalization>  
+  <nesting id="151">    
+    <bendpoint x="1614" y="1079"/>    
+    <end type="SOURCE" refId="6"/>    
+    <end type="TARGET" refId="32"/>  
+  </nesting>  
+  <realization id="152">    
+    <bendpoint x="3072" y="1089"/>    
+    <end type="SOURCE" refId="40"/>    
+    <end type="TARGET" refId="14"/>  
+  </realization>  
+  <realization id="153">    
+    <bendpoint x="2495" y="1178"/>    
+    <bendpoint x="3062" y="1182"/>    
+    <bendpoint x="3050" y="988"/>    
+    <end type="SOURCE" refId="18"/>    
+    <end type="TARGET" refId="4"/>  
+  </realization>  
+  <generalization id="154">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="2"/>  
+  </generalization>  
+  <realization id="155">    
+    <bendpoint x="2316" y="1194"/>    
+    <bendpoint x="3147" y="1189"/>    
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="14"/>  
+  </realization>  
+  <realization id="156">    
+    <bendpoint x="2792" y="1231"/>    
+    <bendpoint x="3268" y="1231"/>    
+    <bendpoint x="3270" y="687"/>    
+    <end type="SOURCE" refId="46"/>    
+    <end type="TARGET" refId="22"/>  
+  </realization>  
+  <association id="157">    
+    <end type="SOURCE" refId="29" navigable="false">      
+      <attribute id="158" name="screen"/>      
+      <multiplicity id="159" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="19" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="160">    
+    <end type="SOURCE" refId="16"/>    
+    <end type="TARGET" refId="3"/>  
+  </realization>  
+  <generalization id="161">    
+    <end type="SOURCE" refId="44"/>    
+    <end type="TARGET" refId="2"/>  
+  </generalization>  
+  <generalization id="162">    
+    <bendpoint x="2619" y="1027"/>    
+    <end type="SOURCE" refId="46"/>    
+    <end type="TARGET" refId="45"/>  
+  </generalization>  
+  <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+    sort-features="false" accessors="true" visibility="true">    
+    <attributes public="true" package="true" protected="true" private="true" static="true"/>    
+    <operations public="true" package="true" protected="true" private="true" static="true"/>  
+  </classifier-display>  
+  <association-display labels="true" multiplicity="true"/>
+</class-diagram>

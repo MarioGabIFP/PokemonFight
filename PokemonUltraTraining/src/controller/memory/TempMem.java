@@ -23,10 +23,15 @@ public interface TempMem {
         String name;
         Image tile;
         int hp, lv;
-        
         Gender gender;
 
-        BattleMem (String name, String gender, int hp, int lv, Image tile){};
+        BattleMem (String name, Gender gender, int hp, int lv, Image tile){
+            this.name = name;
+            this.gender = gender;
+            this.hp = hp;
+            this.lv = lv;
+            this.tile = tile;
+        };
 
         public String getName() {return name;}
         public void setName(String name) {this.name = name;}
@@ -55,4 +60,5 @@ public interface TempMem {
     
     public static final ArrayList<Pokemon> pokemones = new ArrayList<>(Arrays.asList(new Bulbasaur(), new Ivysaur(), new Venusaur(), new Pikachu(), new Charmander()));
     public static final ArrayList<Pokemon> pokemonSel = new ArrayList<>();
+    public static final ArrayList<Pokemon> enemySel = new ArrayList<>();
 }

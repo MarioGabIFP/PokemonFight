@@ -31,7 +31,7 @@ public abstract class Menu extends Graphic implements TempMem{
         private PokedexValues PokedexV;
         private BattleOpt BO;
         
-        private MenuConstructor(PokedexValues PokedexV) {this.PokedexV = PokedexV;}
+        private MenuConstructor(PokedexValues PokedexVw) {this.PokedexV = PokedexVw;}
         private MenuConstructor(BattleOpt BO) {this.BO = BO;}
 
         public final PokedexValues getPokedexV() {return PokedexV;}
@@ -50,6 +50,24 @@ public abstract class Menu extends Graphic implements TempMem{
     private final ArrayList<Image> tiles = new ArrayList<>();
     
     public static final void viewOpt(Pokemon pok) {poke = pok;}
-    public static final void setOpt(Pokemon pok) {if (!pokemonSel.contains(pok)) pokemonSel.add(pok); else pokemonSel.remove(pok);}
-    public static final void setOpt(BattleOpt BO) {MenuConstructor.BattleOptn.setBO(BO);}
+    public static final void setOpt(BattleOpt bo) {MenuConstructor.BattleOptn.setBO(bo);}
+    
+    public static final void setOpt(Pokemon pok) {
+        switch (MenuConstructor.PokedexValue.getPokedexV()) {
+            case getPokemonFromMultiball:
+                if (!pokemonSel.contains(pok)) {
+                    pokemonSel.add(pok);
+                } else {
+                    pokemonSel.remove(pok);
+                }
+                break;
+            case getEnemy:
+                if (!enemySel.contains(pok)) {
+                    enemySel.add(pok);
+                } else {
+                    enemySel.remove(pok);
+                }
+                break;
+        }
+    }
 }

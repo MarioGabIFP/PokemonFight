@@ -1,12 +1,11 @@
 package model;
 
 import gui.frameable.Menu;
-import controller.memory.TempMem;
+import gui.frameable.Menu.MenuConstructor;
 import java.awt.Canvas;
 import java.awt.Image;
 import java.io.File;
 import java.util.ArrayList;
-import model.pokemones.Pokemon;
 
 /**
  * @author Mario Gabriel Núñez Alcázar de Velasco
@@ -39,11 +38,7 @@ public class Pointer extends Canvas {
         }
     }
 
-    public void selectPokemon(int pointerPos) {
-        Menu.setOpt(Menu.pokemones.get(pointerPos - 1));
-    }
-    
-    public void preSel(int pointerPos) {
-        Menu.viewOpt(Menu.pokemones.get(pointerPos - 1));
-    }
+    public final void selectPokemon(int pointerPos) {Menu.setOpt(Menu.pokemones.get(pointerPos - 1));}
+    public final void selectEnemy(int pointerPos) {Menu.setOpt(Menu.pokemones.get(pointerPos - 1));}
+    public final void preSel(int pointerPos) {Menu.viewOpt(Menu.pokemones.get(pointerPos - 1));}
 }

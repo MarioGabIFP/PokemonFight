@@ -5,6 +5,6 @@ package model.pokemones.movimientos;
  */
 public interface Movements {
     public enum Attacks {
-        placaje,pisotón,perforador
+        placaje,pisoton,perforador
     }
 }

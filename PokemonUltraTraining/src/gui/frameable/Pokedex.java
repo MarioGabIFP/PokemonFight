@@ -9,12 +9,10 @@ import java.io.File;
 import java.io.IOException;
 import javax.xml.parsers.ParserConfigurationException;
 import org.xml.sax.SAXException;
-import static gui.elements.Assets.spritePointer;
 import static gui.elements.Base.BLACK;
 import static gui.elements.Base.RED;
 import static gui.elements.Base.WHITE;
 import static gui.elements.screen.Models.pointer;
-import gui.frameable.Menu.PokedexValues;
 import java.awt.Image;
 import java.util.ArrayList;
 import model.pokemones.Pokemon;
@@ -26,10 +24,9 @@ import model.pokemones.tipos.Type.Types;
 public class Pokedex extends Menu {
     private ArrayList<Image> genderImages;
     private ArrayList<Image> typeImages;
-    String title;
+    private PokedexValues type;
 
     public Pokedex() throws IOException {}
-    public Pokedex(PokedexValues pv) throws IOException {}
     
     @Override public void act() {}
     
@@ -37,7 +34,7 @@ public class Pokedex extends Menu {
     public void create() throws IOException, SAXException, ParserConfigurationException, InterruptedException {
         this.genderImages = new ArrayList<>();
         this.typeImages = new ArrayList<>();
-        this.title = MenuConstructor.PokedexValue.getPokedexV().getTitle();
+        this.type = MenuConstructor.PokedexValue.getPokedexV();
         
         genderImages.addAll(tileMapper(new File(genderImg + "1.tsx"), genderImg));
         typeImages.addAll(tileMapper(new File(typesImg + "1.tsx"), typesImg));
@@ -48,8 +45,8 @@ public class Pokedex extends Menu {
         pointer.setBounds(263, 64, 20, 20);
         pointer.setRX(250);
         pointer.setRY(53);
-        pointer.setPointerSprites(new File(spritePointer + "1.tsx"));
-        pointer.addAllTiles(tileMapper(pointer.getPointerSprites(), spritePointer));
+        pointer.setPointerSprites(new File(spritesPokeball + "1.tsx"));
+        pointer.addAllTiles(tileMapper(pointer.getPointerSprites(), spritesPokeball));
         pointer.setPointerTile(pointer.getTileBuffer().get(2).getScaledInstance(pointer.getWidth(), pointer.getHeight(), ALLBITS));
         pointer.setLimit(chargeController.getPokemones().size());
         
@@ -154,7 +151,11 @@ public class Pokedex extends Menu {
             h2 = 83;
             
             for (Pokemon pok : chargeController.getPokemones()) {
-                loadFillOval(258, h1, 30, 30, pokemonSel.contains(pok) ? Color.BLUE : WHITE);
+                switch (type) {
+                    case getPokemonFromMultiball -> loadFillOval(258, h1, 30, 30, pokemonSel.contains(pok) ? Color.BLUE : WHITE);
+                    case getEnemy -> loadFillOval(258, h1, 30, 30, enemySel.contains(pok) ? Color.BLUE : WHITE);
+                }
+                
                 loadString(315, h2, BLACK, pok.getName(), 25);
                 h1 += 50;
                 h2 += 50;
@@ -177,7 +178,7 @@ public class Pokedex extends Menu {
             /*
              * Titulo
              */
-            loadString((g_0.getWidth() / 2) - (title.length() * 9), 25, WHITE, title, 30);
+            loadString((g_0.getWidth() / 2) - (type.getTitle().length() * 9), 25, WHITE, type.getTitle(), 30);
 
             /*
              * Opciones de ventana

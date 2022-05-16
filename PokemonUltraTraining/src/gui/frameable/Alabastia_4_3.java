@@ -4,7 +4,6 @@ import gui.Graphic;
 import static java.awt.image.ImageObserver.ALLBITS;
 import java.io.File;
 import java.io.IOException;
-import javax.imageio.ImageIO;
 import javax.xml.parsers.ParserConfigurationException;
 import model.Pokeball;
 import org.xml.sax.SAXException;
@@ -41,8 +40,10 @@ public class Alabastia_4_3 extends Graphic {
         trainer.setPlayerTile(trainer.getTileBuffer().get(1).getScaledInstance(trainer.getWidth(), trainer.getHeight(), ALLBITS));
 
         pokeball.setBounds(377, 180, 25, 25);
-        pokeball.setPokeballType(Pokeball.type.multiball);
-        pokeball.setActualTile(ImageIO.read(new File(spritesPokeball + "1.png")).getScaledInstance(pokeball.getWidth(), pokeball.getHeight(), ALLBITS));
+        pokeball.setPokeballType(Pokeball.Typ.multiball);
+        pokeball.setPokeSprites(new File(spritesPokeball + "1.tsx"));
+        pokeball.addAllTiles(tileMapper(pokeball.getPokeSprites(), spritesPokeball));
+        pokeball.setPokeTile(pokeball.getTileBuffer().get(5).getScaledInstance(pokeball.getWidth(), pokeball.getHeight(), ALLBITS));
 
         player.setBounds(200, 200, 35, 80);
         player.setPlayerSprites(new File(spritePlayer + "1.tsx"));
@@ -182,7 +183,7 @@ public class Alabastia_4_3 extends Graphic {
                 }
             }
 
-            loadSprite(pokeball.getActualTile(), pokeball.getX() + _map.getX(), pokeball.getY() + _map.getY());
+            loadSprite(pokeball.getPokeTile(), pokeball.getX() + _map.getX(), pokeball.getY() + _map.getY());
             loadSprite(trainer.getPlayerTile(), trainer.getX() + _map.getX(), trainer.getY() + _map.getY());
             loadSprite(player.getPlayerTile(), player.getX(), player.getY());
 

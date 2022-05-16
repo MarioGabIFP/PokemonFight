@@ -13,7 +13,7 @@ import gui.elements.Assets;
 public interface Models extends Assets {
     Player player = new Player();
     Trainer trainer = new Trainer();
-    Pokeball pokeball = new Pokeball(Pokeball.type.multiball);
+    Pokeball pokeball = new Pokeball(Pokeball.Typ.multiball);
     Pointer pointer = new Pointer();
 
     void loadSprite(Image image, int x, int y);

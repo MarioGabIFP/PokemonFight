@@ -19,7 +19,6 @@ public class Pokemon implements Type, Movements {
         Nature (float value) {this.value = value;}
     }
     
-    
     protected int id;
     protected int hp;
     protected int stroke;

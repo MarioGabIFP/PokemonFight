@@ -26,11 +26,6 @@ public interface Assets extends Base {
      * <strong>Sprites Pokeball</strong>.
      */
     String spritesPokeball = "assets/sprites/pokeballs/";
-    
-    /**
-     * <strong>Sprites Pokeball</strong>.
-     */
-    String spritePointer = "assets/sprites/pointers/";
 
     /**
      * <strong>Sprites de Entrenadores</strong>.

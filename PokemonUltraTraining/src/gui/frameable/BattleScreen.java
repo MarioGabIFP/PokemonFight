@@ -61,14 +61,14 @@ public class BattleScreen extends Graphic {
         g_0.setBounds(223, 64, 514, 512);
         g_0.setBackground(new Color(0.086f, 0.714f, 0.404f));
 
-        if (BattleMem.player.getName().length() > 7) {
-            nameP = BattleMem.player.getName().substring(0, 7) + "..."; 
+        if (BattleMem.player.getName().length() > 15) {
+            nameP = BattleMem.player.getName().substring(0, 15) + "..."; 
         } else {
             nameP = BattleMem.player.getName();
         }
         
-        if (BattleMem.enemy.getName().length() > 7) {
-            nameE = BattleMem.enemy.getName().substring(0, 7) + "..."; 
+        if (BattleMem.enemy.getName().length() > 15) {
+            nameE = BattleMem.enemy.getName().substring(0, 15) + "..."; 
         } else {
             nameE = BattleMem.enemy.getName();
         }
@@ -78,8 +78,8 @@ public class BattleScreen extends Graphic {
         pointer.setBounds(280, 357, 30, 30);
         pointer.setRX(275);
         pointer.setRY(354);
-        pointer.setPointerSprites(new File(spritePointer + "1.tsx"));
-        pointer.addAllTiles(tileMapper(pointer.getPointerSprites(), spritePointer));
+        pointer.setPointerSprites(new File(spritesPokeball + "1.tsx"));
+        pointer.addAllTiles(tileMapper(pointer.getPointerSprites(), spritesPokeball));
         pointer.setPointerTile(pointer.getTileBuffer().get(1).getScaledInstance(pointer.getWidth(), pointer.getHeight(), ALLBITS));
         
         add(g_0);
@@ -107,17 +107,19 @@ public class BattleScreen extends Graphic {
          * Pinta informacion jugador
          */
         loadFillRoundRect(10 , 250, 287, 70, new Color(0.984f, 0.965f, 0.839f), new BasicStroke(6.0f), 10, 10);
-        loadRoundRect(10 , 250, 287, 70, BLACK, new BasicStroke(6.0f), 10, 10);
-        loadFillRoundRect(49, 291, 242, 19, new Color(0.322f, 0.412f, 0.341f), new BasicStroke(6.0f), 10, 10);
-        loadLine(80, 300, 280, 300, WHITE, new BasicStroke(10.0f));
-        hpPrint(80, 280, 300, 300, BattleMem.player);
-        loadString(50, 277, BLACK, nameP, 25);
+        loadRoundRect(10, 250, 287, 70, BLACK, new BasicStroke(6.0f), 10, 10);
+        loadFillRoundRect(69, 295, 222, 19, new Color(0.322f, 0.412f, 0.341f), new BasicStroke(6.0f), 10, 10);
+        loadLine(100, 304, 280, 304, WHITE, new BasicStroke(10.0f));
+        hpPrint(100, 280, 304, 304, BattleMem.player);
+        loadString(69, 270, BLACK, nameP, 15);
+        
         loadImage(genderImages.get( switch (BattleMem.player.getGender()) {
                                         case male -> 1;
                                         case female -> 0;
                                     }).getScaledInstance(32, 32, ALLBITS), 19, 255);
-        loadString(54, 305, new Color(0.941f, 0.702f, 0.286f), "HP", 15);
-        loadString(200, 277, BLACK, "LV " + BattleMem.player.getLV(), 25);
+        
+        loadString(74, 309, new Color(0.941f, 0.702f, 0.286f), "HP", 15);
+        loadString(245, 270, BLACK, "LV " + BattleMem.player.getLV(), 15);
 
         /*
          * Sprite Pokemon Enemigo
@@ -129,16 +131,18 @@ public class BattleScreen extends Graphic {
          */
         loadFillRoundRect(10, 10, 287, 70, new Color(0.984f, 0.965f, 0.839f), new BasicStroke(6.0f), 10, 10);
         loadRoundRect(10, 10, 287, 70, BLACK, new BasicStroke(6.0f), 10, 10);
-        loadFillRoundRect(49, 47, 242, 19, new Color(0.322f, 0.412f, 0.341f), new BasicStroke(6.0f), 10, 10);
-        loadLine(80, 56, 280, 56, WHITE, new BasicStroke(10.0f));
-        hpPrint(80, 280, 56, 56, BattleMem.enemy);
-        loadString(55, 36, BLACK, nameE, 25);
+        loadFillRoundRect(69, 55, 222, 19, new Color(0.322f, 0.412f, 0.341f), new BasicStroke(6.0f), 10, 10);
+        loadLine(100, 64, 280, 64, WHITE, new BasicStroke(10.0f));
+        hpPrint(100, 280, 64, 64, BattleMem.enemy);
+        loadString(69, 28, BLACK, nameE, 15);
+        
         loadImage(genderImages.get( switch (BattleMem.enemy.getGender()) {
                                         case male -> 1;
                                         case female -> 0;
                                     }).getScaledInstance(32, 32, ALLBITS), 19, 13);
-        loadString(54, 61, new Color(0.941f, 0.702f, 0.286f), "HP", 15);
-        loadString(200, 36, BLACK, "LV " + BattleMem.enemy.getLV(), 25);
+        
+        loadString(74, 69, new Color(0.941f, 0.702f, 0.286f), "HP", 15);
+        loadString(245, 28, BLACK, "LV " + BattleMem.enemy.getLV(), 15);
 
         /**
          * Recuadro inferior
