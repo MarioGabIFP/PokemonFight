@@ -1,5 +1,6 @@
 package controller.logic;
 
+import controller.memory.TempMem;
 import gui.Graphic;
 import static gui.elements.screen.Models.pointer;
 import gui.frameable.Alabastia_4_3;
@@ -7,9 +8,12 @@ import gui.frameable.BattleScreen;
 import gui.frameable.Menu;
 import gui.frameable.Pokedex;
 import gui.frameable.Menu.PokedexValues;
+import java.awt.Image;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.xml.parsers.ParserConfigurationException;
@@ -19,7 +23,7 @@ import org.xml.sax.SAXException;
 /**
  * @author Mario Gabriel Núñez Alcázar de Velasco
  */
-public class Actions implements KeyListener {
+public class Actions implements KeyListener, TempMem {
     private final Graphic screen;
     
     private int pointerPos = 1;
@@ -28,6 +32,8 @@ public class Actions implements KeyListener {
     
     @Override public void keyTyped(KeyEvent e) {}
     @Override public void keyReleased(KeyEvent e) {}
+    @Override public void loadSprite(Image image, int x, int y) {}
+    @Override public ArrayList<Image> tileMapper(File xml, String dir) throws IOException, SAXException, ParserConfigurationException {return null;}
 
     @Override
     public void keyPressed(KeyEvent e) {
@@ -40,14 +46,33 @@ public class Actions implements KeyListener {
                 if (screen instanceof Pokedex) {
                     pointer.selectPokemon(pointerPos);
                 }
+                
+                if (screen instanceof Alabastia_4_3) {
+                    if (player.evaliuateWith(pokeball)) {
+                        try {
+                            Menu.MenuConstructor.PokedexValue.setPokedexV(PokedexValues.getPokemonFromMultiball);
+                            ScreenController.setScreen(new Pokedex());
+                        } catch (IOException | SAXException | ParserConfigurationException | InterruptedException ex) {
+                            Logger.getLogger(Actions.class.getName()).log(Level.SEVERE, null, ex);
+                        }
+                    } else if (player.evaliuateWith(trainer)) {
+                        try {
+                            Menu.MenuConstructor.PokedexValue.setPokedexV(PokedexValues.getEnemy);
+                            ScreenController.setScreen(new Pokedex());
+                        } catch (IOException | SAXException | ParserConfigurationException | InterruptedException ex) {
+                            Logger.getLogger(Actions.class.getName()).log(Level.SEVERE, null, ex);
+                        }
+                    }
+                }
             }
             
             case 37, 65 -> {
                 if (screen instanceof Alabastia_4_3) {
-                    if (Graphic.player.getX() - 5 >= Graphic._map.getX()) {
-                        Graphic.player.walk(Player.Dir.left, Graphic.player.getX() - 5, Graphic.player.getY());
-                    }
-                    if (Graphic.player.getX() - 5 <= screen.g_0.getX() && Graphic._map.getX() < 0) {
+                    if (player.getX() - 5 >= screen._map.getX()) {
+                        player.walk(Player.Dir.left, player.getX() - 5, player.getY());
+                    } 
+                    
+                    if (player.getX() - 5 <= screen.g_0.getX() && screen._map.getX() < 0) {
                         screen.setAdjust(Graphic.Adjust.right);
                         screen.act();
                     }
@@ -75,10 +100,10 @@ public class Actions implements KeyListener {
                 }
                 
                 if (screen instanceof Alabastia_4_3) {
-                    if (Graphic.player.getY() + 25 >= Graphic._map.getY()) 
-                        Graphic.player.walk(Player.Dir.up, Graphic.player.getX(), Graphic.player.getY() - 5);
+                    if (player.getY() + 25 >= screen._map.getY()) 
+                        player.walk(Player.Dir.up, player.getX(), player.getY() - 5);
                     
-                    if (Graphic.player.getY() <= screen.g_0.getY() && Graphic._map.getY() < 0) {
+                    if (player.getY() <= screen.g_0.getY() && screen._map.getY() < 0) {
                         screen.setAdjust(Graphic.Adjust.down);
                         screen.act();
                     }
@@ -87,8 +112,8 @@ public class Actions implements KeyListener {
             
             case 39, 68 -> {
                 if (screen instanceof Alabastia_4_3) {
-                    if (Graphic.player.getX() + 5 >= Graphic._map.getX()) Graphic.player.walk(Player.Dir.right, Graphic.player.getX() + 5, Graphic.player.getY());
-                    if (Graphic.player.getX() - 5 <= screen.g_0.getX() - Graphic.player.getWidth() && Graphic._map.getX() >= -19) {
+                    if (player.getX() + 5 >= screen._map.getX()) player.walk(Player.Dir.right, player.getX() + 5, player.getY());
+                    if (player.getX() - 5 <= screen.g_0.getX() - player.getWidth() && screen._map.getX() >= -19) {
                         screen.setAdjust(Graphic.Adjust.left);
                         screen.act();
                     }
@@ -116,10 +141,10 @@ public class Actions implements KeyListener {
                 }
                 
                 if (screen instanceof Alabastia_4_3) {
-                    if (Graphic.player.getY() + 5 <= Graphic._map.getY() + (Graphic._map.getHeight() - (Graphic.player.getHeight() - 30))) 
-                        Graphic.player.walk(Player.Dir.down, Graphic.player.getX(), Graphic.player.getY() + 5);
+                    if (player.getY() + 5 <= screen._map.getY() + (screen._map.getHeight() - (player.getHeight() - 30))) 
+                        player.walk(Player.Dir.down, player.getX(), player.getY() + 5);
                     
-                    if (Graphic.player.getY() + 5 >= screen.g_0.getHeight() - (Graphic._map.getHeight() - 30) && Graphic._map.getY() >= - 19) {
+                    if (player.getY() + 5 >= screen.g_0.getHeight() - (screen._map.getHeight() - 30) && screen._map.getY() >= - 19) {
                         screen.setAdjust(Graphic.Adjust.up);
                         screen.act();
                     }
@@ -128,10 +153,10 @@ public class Actions implements KeyListener {
             
             case 83 -> {
                 if (screen instanceof Alabastia_4_3) {
-                    if (Graphic.player.getY() + 5 <= Graphic._map.getY() + (Graphic._map.getHeight() - (Graphic.player.getHeight() - 30))) 
-                        Graphic.player.walk(Player.Dir.down, Graphic.player.getX(), Graphic.player.getY() + 5);
+                    if (player.getY() + 5 <= screen._map.getY() + (screen._map.getHeight() - (player.getHeight() - 30))) 
+                        player.walk(Player.Dir.down, player.getX(), player.getY() + 5);
                     
-                    if (Graphic.player.getY() + 5 >= screen.g_0.getHeight() - (Graphic._map.getHeight() - 30) && Graphic._map.getY() >= - 19) {
+                    if (player.getY() + 5 >= screen.g_0.getHeight() - (screen._map.getHeight() - 30) && screen._map.getY() >= - 19) {
                         screen.setAdjust(Graphic.Adjust.up);
                         screen.act();
                     }
@@ -140,10 +165,10 @@ public class Actions implements KeyListener {
             
             case 87 -> {
                 if (screen instanceof Alabastia_4_3) {
-                    if (Graphic.player.getY() + 25 >= Graphic._map.getY()) 
-                        Graphic.player.walk(Player.Dir.up, Graphic.player.getX(), Graphic.player.getY() - 5);
+                    if (player.getY() + 25 >= screen._map.getY()) 
+                        player.walk(Player.Dir.up, player.getX(), player.getY() - 5);
                     
-                    if (Graphic.player.getY() <= screen.g_0.getY() && Graphic._map.getY() < 0) {
+                    if (player.getY() <= screen.g_0.getY() && screen._map.getY() < 0) {
                         screen.setAdjust(Graphic.Adjust.down);
                         screen.act();
                     }
@@ -151,33 +176,12 @@ public class Actions implements KeyListener {
             }
             
             case 112 -> {
-                try {
-                    Menu.MenuConstructor.PokedexValue.setPokedexV(PokedexValues.getPokemonFromMultiball);
-                    ScreenController.setScreen(new Pokedex());
-                } catch (IOException | SAXException | ParserConfigurationException | InterruptedException ex) {
-                    Logger.getLogger(Actions.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            }
-            case 113 -> {
-                try {
-                    ScreenController.setScreen(new BattleScreen());
-                } catch (IOException | SAXException | ParserConfigurationException | InterruptedException ex) {
-                    Logger.getLogger(Actions.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            }
-            case 114 -> {
-                try {
-                    ScreenController.setScreen(new Alabastia_4_3());
-                } catch (IOException | SAXException | ParserConfigurationException | InterruptedException ex) {
-                    Logger.getLogger(Actions.class.getName()).log(Level.SEVERE, null, ex);
-                }
-            }
-            case 115 -> {
-                try {
-                    Menu.MenuConstructor.PokedexValue.setPokedexV(PokedexValues.getEnemy);
-                    ScreenController.setScreen(new Pokedex());
-                } catch (IOException | SAXException | ParserConfigurationException | InterruptedException ex) {
-                    Logger.getLogger(Actions.class.getName()).log(Level.SEVERE, null, ex);
+                if (screen instanceof Pokedex) {
+                    try {
+                        ScreenController.setScreen(new Alabastia_4_3());
+                    } catch (IOException | SAXException | ParserConfigurationException | InterruptedException ex) {
+                        Logger.getLogger(Actions.class.getName()).log(Level.SEVERE, null, ex);
+                    }
                 }
             }
         }

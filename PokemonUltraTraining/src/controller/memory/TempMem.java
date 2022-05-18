@@ -1,5 +1,6 @@
 package controller.memory;
 
+import gui.elements.screen.Models;
 import java.awt.Image;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -15,7 +16,7 @@ import model.pokemones.Venusaur;
 /**
  * @author Mario Gabriel Núñez Alcázar de Velasco
  */
-public interface TempMem {
+public interface TempMem extends Models{
     public enum BattleMem {
         player(null, null, 0, 0, null),
         enemy(null, null, 0, 0, null);

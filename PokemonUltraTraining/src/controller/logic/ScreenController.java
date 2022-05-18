@@ -1,7 +1,10 @@
 package controller.logic;
 
 import gui.Graphic;
+import java.awt.Image;
+import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.xml.parsers.ParserConfigurationException;
@@ -19,6 +22,7 @@ public class ScreenController {
             while (render.isAlive())
                 try {
                     graphics.update();
+                    AbstractEvents.Evaluate(graphics);
                 } catch (IOException | InterruptedException ex) {
                     Logger.getLogger(ScreenController.class.getName()).log(Level.SEVERE, null, ex);
                 }

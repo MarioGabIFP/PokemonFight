@@ -169,10 +169,10 @@ public class Pokedex extends Menu {
              * Botones de acción
              */
             w = 8;
-            for (int i = 0; i < 4; i++) {
+            for (int i = 0; i < 1; i++) {
                 loadFillGradientRoundRect(w, 460, 115, 40, new GradientPaint(0, 0, WHITE, 0, 40, new Color(0.600f, 0.659f, 0.718f)), new BasicStroke(6.0f), 10, 10);
                 loadRoundRect(w, 460, 115, 40, BLACK, new BasicStroke(4.0f), 10, 10);
-                w += 126;
+                w += 180;
             }
 
             /*
@@ -183,10 +183,7 @@ public class Pokedex extends Menu {
             /*
              * Opciones de ventana
              */
-            loadString(26, 487, BLACK, "SALIR", 25);
-            loadString(144, 487, BLACK, "BUSCAR", 25);
-            loadString(278, 487, BLACK, "COGER", 25);
-            loadString(391, 487, BLACK, "MOCHILA", 25);
+            loadString(26, 487, BLACK, "F1/SALIR", 25);
 
             bs.show();
         }

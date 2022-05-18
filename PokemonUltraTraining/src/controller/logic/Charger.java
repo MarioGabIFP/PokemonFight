@@ -4,9 +4,13 @@ import controller.memory.TempMem;
 import controller.memory.TempMem.BattleMem;
 import gui.Graphic;
 import gui.frameable.BattleScreen;
+import java.awt.Image;
+import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import javax.xml.parsers.ParserConfigurationException;
 import model.pokemones.Pokemon;
+import org.xml.sax.SAXException;
 
 /**
  * @author Mario Gabriel Núñez Alcázar de Velasco
@@ -17,6 +21,9 @@ public class Charger implements TempMem {
     public Charger(Graphic screen) {
         this.screen = screen;
     }
+    
+    @Override public void loadSprite(Image image, int x, int y) {}
+    @Override public ArrayList<Image> tileMapper(File xml, String dir) throws IOException, SAXException, ParserConfigurationException {return null;}
     
     public void charge() throws IOException {
         if (screen instanceof BattleScreen) {

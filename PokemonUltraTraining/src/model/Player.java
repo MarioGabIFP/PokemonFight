@@ -26,21 +26,14 @@ public class Player extends Canvas {
     public final Image getPlayerTile() {return actualTile;}
     public final ArrayList<Pokemon> getPokeBuffer() {return pokeBuffer;}
     public final ArrayList<Image> getTileBuffer() {return tiles;}
+    public final boolean evaliuateWith(Canvas model) {return getBounds().x <= model.getBounds().x + 30 && getBounds().x >= model.getBounds().x - 30;}
     
     public final void walk(Dir d, int x, int y) {
         switch (d) {
-            case down -> {
-                setPlayerTile(getTileBuffer().get(1).getScaledInstance(getWidth(), getHeight(), ALLBITS));
-            }
-            case up -> {
-                setPlayerTile(getTileBuffer().get(4).getScaledInstance(getWidth(), getHeight(), ALLBITS));
-            }
-            case left -> {
-                setPlayerTile(getTileBuffer().get(10).getScaledInstance(getWidth(), getHeight(), ALLBITS));
-            }
-            case right -> {
-                setPlayerTile(getTileBuffer().get(7).getScaledInstance(getWidth(), getHeight(), ALLBITS));
-            }
+            case down -> setPlayerTile(getTileBuffer().get(1).getScaledInstance(getWidth(), getHeight(), ALLBITS));
+            case up -> setPlayerTile(getTileBuffer().get(4).getScaledInstance(getWidth(), getHeight(), ALLBITS));
+            case left -> setPlayerTile(getTileBuffer().get(10).getScaledInstance(getWidth(), getHeight(), ALLBITS));
+            case right -> setPlayerTile(getTileBuffer().get(7).getScaledInstance(getWidth(), getHeight(), ALLBITS));
         }
         
         setBounds(x, y, getWidth(), getHeight());
